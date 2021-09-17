@@ -1,0 +1,32 @@
+.m_tip{
+    cursor: pointer;
+    padding: 5px 10px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.233);
+}
+
+.m_tip:hover{
+    background-color: rgba(128, 128, 128, 0.103);
+}
+
+.m_tip p:nth-child(1){
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.m_tip p:nth-child(2){
+    margin-top: 10px;
+    font-size: 14px;
+    word-break: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-height: 16px; /* fallback */
+    max-height: 32px; /* fallback */
+    -webkit-line-clamp: 2; /* number of lines to show */
+    -webkit-box-orient: vertical;
+}
+.m_tip p:nth-child(3){
+    margin-top: 10px;
+    font-size: 12px;
+    color: gray;
+}

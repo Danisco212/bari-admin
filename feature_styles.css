@@ -1,0 +1,237 @@
+#features{
+    width: 100vw;
+    margin-top: 40px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+}
+
+#features .container{
+    width: 1300px;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+#features .container .text{
+    width: 25%;
+}
+
+.holder{
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.feature{
+    opacity: 0;
+    margin: 0px 20px 20px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 47%;
+}
+
+.feature h5{
+    margin-bottom: 10px;
+    font-weight: 600px;
+    font-size: 20px;
+}
+
+.image_f{
+    margin-right: 20px;
+    width: 60px;
+    height: 60px;
+}
+
+#extra_features{
+    margin-top: 50px;
+    width: 100vw;
+    justify-content: center;
+    display: flex;
+}
+
+#extra_features .container{
+    justify-content: space-around;
+    width: 1300px;
+}
+
+#extra_features .container img{
+    height: 600px;
+}
+
+.options{
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 30%;
+}
+
+.option{
+    width: 90%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.content{
+    width: 80%;
+}
+
+.pointer{
+    margin-right: 20px;
+    height: 40px;
+    width: 10%;
+    background-color: #51dae9;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.left{
+    margin-left: 20px;
+    margin-right: 0px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 20px;
+}
+
+@media screen and (max-width: 1100px) {
+    #features{
+        height: unset;
+    }
+    
+    #features .container{
+        width: 100vw;
+    }
+    
+    #features .container .text{
+        width: 25%;
+    }
+    
+    .holder{
+        width: 70%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .feature{
+        margin: 0px 0px 10px 0px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 50%;
+    }
+
+    #extra_features{
+        margin-top: 50px;
+        width: 100vw;
+        justify-content: center;
+        display: flex;
+    }
+    
+    #extra_features .container{
+        justify-content: space-around;
+        flex-direction: row;
+        width: 100vw;
+    }
+    
+    #extra_features .container img{
+        width: 30%;
+        height: unset;
+    }
+    
+    .options{
+        height: 500px;
+        width: 35%;
+    }
+    
+}
+
+@media screen and (max-width: 768px) {
+    #extra_features .container img{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        width: 20%;
+    }
+
+    .options{
+        height: unset;
+        width: 90%;
+    }
+
+    .option{
+        margin-bottom: 30px;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+    
+    #features .container{
+        width: 100vw;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #features .container .text{
+        margin-bottom: 20px;
+        width: 90%;
+    }
+    
+    .holder{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .feature{
+        margin: 0px 0px 20px 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 90%;
+    }
+
+    .image_f{
+        margin-bottom: 10px;
+        margin-right: 20px;
+        width: 60px;
+        height: 60px;
+    }
+
+    #extra_features{
+        margin-top: 50px;
+        width: 100vw;
+        justify-content: center;
+        display: flex;
+    }
+    
+    #extra_features .container{
+        justify-content: space-around;
+        flex-direction: column;
+        width: 100vw;
+    }
+    
+    #extra_features .container img{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        width: 70%;
+    }
+    
+    .options{
+        width: 90%;
+    }
+
+}

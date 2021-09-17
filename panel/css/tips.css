@@ -1,0 +1,120 @@
+.tip_list {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start
+}
+
+.tip_img {
+    object-fit: cover;
+    width: 100%;
+    height: 300px;
+    background-color: white;
+    outline: none;
+    border: none;
+}
+
+.tip {
+    margin: 10px 50px 10px 0px;
+    border-radius: 6px;
+    background-color: white;
+    box-shadow: 3px 0px 10px rgba(133, 133, 133, 0.123);
+    /* border: 1px solid rgb(218, 218, 218); */
+    width: 320px;
+}
+
+.tip:hover{
+    transform: scale(1.01);
+}
+
+.tip .details {
+    padding: 10px;
+}
+
+.tip .information {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 10px 0px;
+}
+
+.tip .information p {
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+.tip .information img {
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+    background-color: gray;
+    margin-right: 10px;
+}
+
+.tip_body{
+    font-size: 14px;
+    word-break: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-height: 16px; /* fallback */
+    max-height: 32px; /* fallback */
+    -webkit-line-clamp: 2; /* number of lines to show */
+    -webkit-box-orient: vertical;
+}
+
+.tip .actions {
+    margin-top: 10px;
+    padding: 10px 0px;
+    border-top: 1px solid rgb(218, 218, 218);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tip .actions p {
+    font-size: 14px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.tip_head{
+    margin-top: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.tip_head a{
+    margin-left: 20px;
+    width: 120px;
+    padding: 10px 20px;
+    background-color: #25b5c5;
+    color: white;
+    border-radius: 4px;
+    border: none;
+    text-align: center;
+    font-size: 14px;
+}
+
+.tip_head a:hover{
+    box-shadow: 0px 0px 8px #22cde0;
+}
+
+
+@media screen and (max-width: 768px) {
+    .tip_list{
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    .tip{
+        margin: 20px 0px;
+        width: 90%;
+    }
+}

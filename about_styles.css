@@ -1,0 +1,100 @@
+#about {
+    position: relative;
+    background-color: #F6F7F9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#about .container{
+    justify-content: space-around;
+    background-color: #F6F7F9;
+    width: 1300px;
+}
+
+.side_image{
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background-image: url("./images/obese.png"); */
+    background-image: url("./images/fat_man.jpg");
+    background-position-x: -100px;
+    width: 40%;
+    border-top-left-radius: 650px;
+    border-top-right-radius: 500px;
+    border-bottom-right-radius: 650px;
+    border-bottom-left-radius: 500px;
+    height: 600px;
+    border: 10px solid white;
+    box-shadow: 0px 0px 20px rgb(182, 182, 182);
+}
+
+.cloud{
+    z-index: 5;
+    position: absolute;
+    left: 6%;
+    top: 50%;
+}
+
+.thin_cloud{
+    height: 7px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    width: 100px;
+    background-color: #F0467A;
+}
+
+.c1{
+    margin-left: 50px;
+}
+
+.large_txt{
+    margin-top: 20px;
+    width: 1300px;
+}
+
+@media screen and (max-width: 1100px) {
+    #about .container{
+        padding-top: 30px;
+        padding-bottom: 30px;
+        justify-content: space-around;
+        flex-direction: column-reverse;
+        background-color: #F6F7F9;
+        width: 100vw;
+    }
+
+    .side_image{
+        margin-top: 20px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-image: url("./images/fat_man.jpg");
+        background-position-x: -100px;
+        width: 55%;
+        border-top-left-radius: 650px;
+        border-top-right-radius: 500px;
+        border-bottom-right-radius: 650px;
+        border-bottom-left-radius: 500px;
+        height: 600px;
+        border: 10px solid white;
+        box-shadow: 0px 0px 20px rgb(182, 182, 182);
+    }
+    
+}
+
+@media screen and (max-width: 768px) {
+
+    .side_image{
+        margin-top: 20px;
+        width: 65%;
+        height: 600px;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+    .side_image{
+        margin-top: 100px;
+        width: 85%;
+        height: 450px;
+    }
+}

@@ -1,0 +1,115 @@
+.users_holder {
+    background-color: white;
+    /* border: 1px solid rgb(218, 218, 218); */
+    box-shadow: 3px 0px 10px rgba(133, 133, 133, 0.123);
+    border-radius: 4px;
+}
+
+.users_holder .header {
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.users_holder .header .actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.users_holder .header .actions input {
+    height: 35px;
+    width: 250px;
+    background-color: white;
+    padding: 0px 10px;
+    outline: none;
+    border-radius: 4px;
+    border: 1px solid rgb(218, 218, 218);
+}
+
+.users_holder .header .actions p {
+    font-size: 13px;
+    color: gray;
+    margin-right: 10px;
+}
+
+.users_holder .header .actions a {
+    margin-left: 20px;
+    text-align: center;
+    width: 120px;
+    padding: 10px 20px;
+    background-color: #25b5c5;
+    color: white;
+    border-radius: 4px;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.table_header {
+    background-color: #F3F2F7;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+}
+
+.table_header p {
+    width: 16.6%;
+    font-size: 14px;
+    color: gray;
+    font-weight: 800;
+}
+
+.user {
+    border-bottom: 1px solid rgb(218, 218, 218);
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.user div {
+    width: 16.6%;
+}
+
+.user p {
+    font-size: 12px;
+    width: 16.6%;
+    text-overflow: ellipsis;
+}
+
+/* .user>p:nth-child(1) {
+    width: 20%;
+    font-size: 12px;
+    color: 'red';
+} */
+
+.user .dets a:nth-child(1) {
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.user .dets p:nth-child(1) {
+    font-size: 12px;
+    color: #25b5c5;
+}
+
+.user_prof img {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: gray;
+    margin-right: 10px;
+}
+
+.user_prof {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}

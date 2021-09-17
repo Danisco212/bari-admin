@@ -1,0 +1,31 @@
+header{
+    padding: 20px;
+    position: fixed;
+    z-index: 10;
+    height: 90px;
+    width: 100vw;
+    background-color: transparent;
+}
+
+header .container{
+    width: 1300px;
+    justify-content: space-between;
+    height: 90px;
+}
+
+.logo_img{
+    width: 90px;
+}
+
+.download_btn{
+    cursor: pointer;
+    /* background: linear-gradient(to right, #f73e75, #F0467A, #f580a3); */
+    background: linear-gradient(to right, #50F0D6, #63e9d2, #7af0dc);
+    color: white;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    height: 40px;
+    min-width: 120px;
+    padding: 5px 15px;
+}

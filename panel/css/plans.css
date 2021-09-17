@@ -1,0 +1,138 @@
+.plan_list {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.plan {
+    margin-bottom: 20px;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    width: 250px;
+    border-radius: 5px;
+    border: 1px solid #25B5C5;
+    background-color: white;
+    padding: 10px;
+}
+
+.plan .main {}
+
+.green_circle {
+    height: 20px;
+    width: 20px;
+    margin-right: 20px;
+    border-radius: 10px;
+    background-color: #25B5C5;
+}
+
+
+.plan .details p:nth-child(1) {
+    font-weight: 500;
+    color: black;
+}
+
+.plan .details p:nth-child(2) {
+    color: gray;
+    font-size: 14px;
+}
+
+.price {
+    margin-top: 10px;
+    text-align: center;
+    padding: 5px 10px;
+    background-color: #25B5C5;
+    color: white;
+    border-radius: 5px;
+}
+
+.mHeader{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 60px;
+}
+
+.mHeader button{
+    display: none;
+    padding: 5px 10px;
+    background-color: #25B5C5;
+    color: white;
+    width: 150px;
+    border: none;
+    border-radius: 4px;
+    margin-left: 20px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.add_plan{
+    width: 440px;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 3px 0px 10px rgba(133, 133, 133, 0.123);
+    /* border: 1px solid rgb(218, 218, 218); */
+}
+
+.plan_form{
+    margin-top: 20px;
+}
+
+.plan_form p{
+    font-size: 12px;
+    color: gray;
+}
+
+.plan_form input{
+    height: 45px;
+    background-color: rgba(128, 128, 128, 0.164);
+    border-radius: 4px;
+    width: 400px;
+    border: 1px solid rgb(218, 218, 218);
+    outline: none;
+    padding: 0px 10px;
+    margin-bottom: 20px;
+}
+
+.plan_form button{
+    width: 100%;
+    padding: 5px 10px;
+    background-color: #25B5C5;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    height: 40px;
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 768px) {
+
+    .main_content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .plan_list{
+        justify-content: center;
+        width: 100vw;
+    }
+    .plan {
+        margin: 10px 0px;
+        width: 90%;
+    }
+
+    .add_plan{
+        width: 90%;
+    }
+
+    .plan_form input{
+        width: 100%;
+    }
+
+}

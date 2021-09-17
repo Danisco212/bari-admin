@@ -1,0 +1,111 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Montserrat', 'sans-serif';
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container img {
+    width: 50px;
+    height: 40px;
+}
+
+.container {
+    width: 370px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 8px rgba(128, 128, 128, 0.192);
+}
+
+.container>.header {
+    margin: 20px 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.container>.header>p {
+    margin-left: 10px;
+    font-size: 1.2rem;
+    color: #25b5c5;
+    font-weight: bolder;
+}
+
+.container>.tagline p {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.container>.form p {
+    margin-bottom: 4px;
+    font-size: 14px;
+    color: gray;
+}
+
+input[type="text"] {
+    padding: 0px 10px;
+    width: 100%;
+    height: 40px;
+    margin-bottom: 20px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+.password_holder {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    margin-bottom: 10px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+.password_holder>input {
+    height: 100%;
+    width: 100%;
+    padding: 0px 10px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+}
+
+label {
+    font-size: 14px;
+    color: gray;
+}
+
+button {
+    background-color: #25b5c5;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    width: 100%;
+    height: 45px;
+    margin: 20px 0px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.container>p {
+    font-size: 14px;
+}
+
+#error_msg {
+    color: red;
+    font-size: 14px;
+    text-align: center;
+    margin: 10px 0px;
+    display: none;
+}

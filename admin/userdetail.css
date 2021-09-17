@@ -1,0 +1,114 @@
+.page{
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+}
+
+.profile{
+    position: relative;
+    width: 90%;
+    background-color: #ffffff;
+}
+
+.profile img{
+    height: 280px;
+    width: 100%;
+    object-fit: contain;
+}
+
+.profdetails{
+    padding-left: 10px;
+    background-color: #4084F81a;
+}
+
+.name{
+    color: black;
+    font-size: 18px;
+}
+
+.username{
+    font-size: 14px;
+    font-style: italic;
+}
+
+.page .friends{
+    flex: 1;
+}
+
+.page .user_content{
+    padding: 0px 10px;
+    border-left: 1px solid rgba(49, 49, 49, 0.103);
+    border-right: 1px solid rgba(49, 49, 49, 0.103);
+    flex: 2;
+}
+
+.page .user_Dets{
+    padding-left: 10px;
+    flex: 1;
+}
+
+.prof_Det{
+    margin-top: 12px;
+}
+
+.prof_Det p:nth-child(1){
+    font-size: 14px;
+    font-weight: 600;
+    color: #4084F8;
+}
+
+.friends_list{
+    margin-top: 20px;
+}
+
+.friend{
+    cursor: pointer;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.137);
+}
+
+.friend img{
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+    background-color: rgba(128, 128, 128, 0.096);
+    margin-right: 10px;
+}
+
+.friend_det p:nth-child(1){
+    font-size: 14px;
+}
+
+.friend_det p:nth-child(2){
+    font-size: 12px;
+    color: #4084F8;
+}
+
+.m_post{
+    cursor: pointer;
+    padding: 5px 10px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.233);
+}
+
+.m_post:hover{
+    background-color: rgba(128, 128, 128, 0.103);
+}
+
+.m_post p:nth-child(1){
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.m_post p:nth-child(2){
+    margin-top: 10px;
+    font-size: 14px;
+}
+.m_post p:nth-child(3){
+    margin-top: 10px;
+    font-size: 12px;
+    color: gray;
+}
