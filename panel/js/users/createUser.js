@@ -6,12 +6,24 @@ function createUser() {
     }
 
     var email = document.getElementById("uEmail").value
-    var password = document.getElementById("upassword").value
+    var password = document.getElementById("uPassword").value
     var fullname = document.getElementById("uFullname").value
     var username = document.getElementById("uUsername").value
     var gender = document.getElementById("uGender").value
     var role = document.getElementById("uRole").value
 
+    var user = {
+        email: email,
+        password: password,
+        role: role,
+        username: username,
+        userDetail: {
+            fullName: fullname,
+            gender: gender
+        }
+    }
+
+    console.log(user)
     // validate fields
     if (email.length > 0 && username.length > 0 && fullname.length > 0) {
         if (password.length >= 6) {
@@ -21,20 +33,21 @@ function createUser() {
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify({
-                    email: email,
-                    password: password,
-                    role: role,
-                    username: username,
-                    userDetail: {
-                        fullName: fullname,
-                        gender: gender
-                    }
-                })
+                body: JSON.stringify(user)
             })
-                .then(res => res.json())
+                .then(res => {
+                    return res.text()
+                })
                 .then(data => {
-                    console.log(data)
+                    if (data.includes("UserId")) {
+                        // worked
+                        alert("User has been created")
+                        location.href = "http://localhost/wordpress/user?id=" + data.split(": ")[1]
+                    } else if (data.includes("not available")) {
+                        alert("Username not available")
+                    } else {
+                        alert("Email address not available")
+                    }
                 })
                 .catch(err => {
                     console.log(err)

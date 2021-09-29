@@ -1,7 +1,5 @@
 var user_id = document.getElementById("user_id").innerText
 
-var user_id = document.getElementById("user_id").innerText
-
 function getUserDetails() {
     fetch(`${baseUrl}user/user/${user_id}`, {
         method: 'GET',
@@ -72,5 +70,32 @@ function fillDetails(user) {
     document.getElementById("weight").innerText = user.userDetail.weight
     document.getElementById("height").innerText = user.userDetail.height
     document.getElementById("targetWeight").innerText = user.userDetail.targetWeight
+
+
+    document.getElementById('block_user').innerText = user.active ? "Block User" : "Unblock User"
+    document.getElementById('block_user').addEventListener('click', blockUnblockUser.bind(this, user.active ? "Block User" : "Unblock User"))
+
+}
+
+function blockUnblockUser(message) {
+    var conf = confirm(message)
+
+    if (conf) {
+        fetch(`${baseUrl}admin/activateOrDeactivateUser?userid=${user_id}`, {
+            method: 'GET',
+            headers: {
+                "Authorization": "Bearer " + cookies.bari_token
+            }
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data) {
+                    location.reload()
+                }
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }
 
 }

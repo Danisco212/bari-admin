@@ -1,6 +1,6 @@
 <?php
 
-/* Template Name: Plans */
+/* Template Name: Main Dashboard */
 
 ?>
 
@@ -10,14 +10,14 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/panel/css/header.css">
-    <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/panel/css/plans.css">
+    <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/panel/css/dashboard.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700&display=swap" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barilifestyle Plans</title>
+    <title>Barilifestyle Dashboard</title>
 </head>
 
 <body>
@@ -35,8 +35,8 @@
             </div>
             <p style="margin-top: 30px; color: gray; font-size: 12px;">Features</p>
             <div class="menu_list">
-                <a href="http://localhost/wordpress/dashboard/">
-                    <div class="menu">
+                <a href="">
+                    <div class="menu selected">
                         <i class="fa fa-home" aria-hidden="true"></i>
                         <p>Dashboard</p>
                     </div>
@@ -57,7 +57,7 @@
                 </a>
 
                 <a href="http://localhost/wordpress/plans/">
-                    <div class="menu selected">
+                    <div class="menu">
                         <i class="fa fa-money" aria-hidden="true"></i>
                         <p>Plans</p>
                     </div>
@@ -104,44 +104,81 @@
                 </div>
             </div>
 
-            <div class="mHeader">
-                <h1>Plans</h1>
-                <button>Add Plan</button>
-            </div>
+            <div class="page_container">
+                <div class="top_section">
+                    <div class="welcome">
+                        <div class="wc_msg">
+                            <h4>Welcome to the panel</h4>
+                            <p>You are an admin!</p>
 
-            <div class="plan_list">
-                <!-- <div class="plan">
-                    <div class="green_circle"></div>
-                    <div class="main">
-                        <div class="details">
-                            <p>Plan Name</p>
-                            <p>Plan validity</p>
+                            <a href="http://localhost/wordpress/users/">View Users</a>
                         </div>
-                        <p class="price">Price here</p>
+                        <div class="gts_img">
+                            <img src="<?php bloginfo('template_directory'); ?>/panel/images/Badge.svg" alt="">
+                        </div>
                     </div>
-                </div> -->
-            </div>
-            <div class="add_plan">
-                <h2>Add Plan</h2>
-                <div class="plan_form">
-                    <p>Plan Name</p>
-                    <input type="text" id="planName" placeholder="plan name...">
+                    <div class="stats">
+                        <h4>Statistics</h4>
+                        <div class="stat_holder">
+                            <div class="stat_card">
+                                <div class="stat_imgHolder">
+                                    <i class="fa fa-user-o" style="color: #25b5c5;" aria-hidden="true"></i>
+                                </div>
+                                <div class="stat_det">
+                                    <h4 id="user_count">2k</h4>
+                                    <p>Users</p>
+                                </div>
+                            </div>
 
-                    <p>Plan Validity (in months)</p>
-                    <input type="number" id="planValidity" placeholder="plan validy...">
+                            <div class="stat_card">
+                                <div style="background-color: #FBB3DC;" class="stat_imgHolder">
+                                    <i class="fa fa-user-o" style="color: #F70E93;" aria-hidden="true"></i>
+                                </div>
+                                <div class="stat_det">
+                                    <h4>2k</h4>
+                                    <p>Users</p>
+                                </div>
+                            </div>
 
-                    <p>Plan Price (in USD)</p>
-                    <input type="number" id="planCost" placeholder="plan price...">
-                    <button onclick="addPlan()">Add Plan</button>
+                            <div class="stat_card">
+                                <div style="background-color: #F2F7C6;" class="stat_imgHolder">
+                                    <i class="fa fa-user-o" style="color: #DBF212;" aria-hidden="true"></i>
+                                </div>
+                                <div class="stat_det">
+                                    <h4>2k</h4>
+                                    <p>Users</p>
+                                </div>
+                            </div>
+
+                            <div class="stat_card">
+                                <div style="background-color: #C8C8F3;" class="stat_imgHolder">
+                                    <i class="fa fa-user-o" style="color: #1E1DF4;" aria-hidden="true"></i>
+                                </div>
+                                <div class="stat_det">
+                                    <h4>2k</h4>
+                                    <p>Users</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mid_section">
+                    <div class="user_graphHolder">
+                        <h4 style="margin-bottom: 10px;">User Types</h4>
+                        <canvas id="user_type_chart"></canvas>
+                    </div>
                 </div>
             </div>
+
         </div>
     </div>
 
     <script src="https://kit.fontawesome.com/ac7f9a4329.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
     <script src="<?php bloginfo('template_directory'); ?>/panel/js/variables.js"></script>
     <script src="<?php bloginfo('template_directory'); ?>/panel/js/header/header.js"></script>
-    <script src="<?php bloginfo('template_directory'); ?>/panel/js/plans/plans.js"></script>
+    <script src="<?php bloginfo('template_directory'); ?>/panel/js/dashboard/dashboard.js"></script>
 </body>
 
 </html>

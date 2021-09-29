@@ -48,17 +48,22 @@ function userCard(user) {
     userProf.appendChild(dets)
 
     var role = document.createElement('p')
+    role.className = "list_role"
     role.innerText = user.role
 
     var plan = document.createElement('p')
+    plan.className ="list_plan"
     plan.innerText = "-"
 
     var email = document.createElement('p')
+    email.className = "list_email"
     email.innerText = user.email
 
     var weight = document.createElement('p')
+    weight.className = "list_weight"
     weight.innerText = user.userDetail.weight + " KG"
     weight.style.fontWeight = 500
+
     if (parseInt(user.userDetail.weight) > 90) {
         weight.style.color = "red"
     } else {

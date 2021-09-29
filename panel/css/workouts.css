@@ -1,0 +1,32 @@
+.pageHolder{
+    margin-top: 60px;
+}
+
+.progHolder{
+    background-color: white;
+    border-radius: 4px;
+    padding: 10px;
+    margin-top: 20px;
+    box-shadow: 3px 0px 10px rgba(133, 133, 133, 0.123);
+}
+
+.program{
+    margin-bottom: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 20px 10px;
+    border-left: 5px solid #3bd4d6;
+}
+
+.program:hover{
+    transform: scale(1.01);
+}
+
+.program img{
+    object-fit: contain;
+    height: 60px;
+    width: 60px;
+    background-color: white;
+    margin-right: 10px;
+}

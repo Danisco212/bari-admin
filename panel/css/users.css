@@ -58,10 +58,21 @@
 }
 
 .table_header p {
-    width: 16.6%;
     font-size: 14px;
     color: gray;
     font-weight: 800;
+}
+
+.table_header p:nth-child(1){
+    width: 16.6%;
+}
+
+.table_header p:nth-child(2){
+    width: 20%;
+}
+
+.table_header p:nth-child(3), .table_header p:nth-child(4), .table_header p:nth-child(5){
+    width: 16%;
 }
 
 .user {
@@ -78,15 +89,27 @@
 
 .user p {
     font-size: 12px;
-    width: 16.6%;
     text-overflow: ellipsis;
 }
 
-/* .user>p:nth-child(1) {
+
+.list_email{
     width: 20%;
-    font-size: 12px;
-    color: 'red';
-} */
+}
+
+.list_role{
+    width: 16%;
+    font-weight: 500;
+    color: salmon;
+}
+
+.list_plan{
+    width: 16%;
+}
+
+.list_weight{
+    width: 16%;
+}
 
 .user .dets a:nth-child(1) {
     text-decoration: none;

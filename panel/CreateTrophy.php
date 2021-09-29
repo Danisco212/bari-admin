@@ -1,6 +1,6 @@
 <?php
 
-/* Template Name: Plans */
+/* Template Name: Create Trophy */
 
 ?>
 
@@ -10,14 +10,14 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/panel/css/header.css">
-    <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/panel/css/plans.css">
+    <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/panel/css/create_trophy.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700&display=swap" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barilifestyle Plans</title>
+    <title>Barilifestyle Workouts</title>
 </head>
 
 <body>
@@ -57,20 +57,20 @@
                 </a>
 
                 <a href="http://localhost/wordpress/plans/">
-                    <div class="menu selected">
+                    <div class="menu">
                         <i class="fa fa-money" aria-hidden="true"></i>
                         <p>Plans</p>
                     </div>
                 </a>
 
                 <a href="http://localhost/wordpress/trophies/">
-                    <div class="menu">
+                    <div class="menu selected">
                         <i class="fa fa-trophy" aria-hidden="true"></i>
                         <p>Trophies</p>
                     </div>
                 </a>
 
-                <a href="http://localhost/wordpress/workouts">
+                <a href="http://localhost/wordpress/workouts/">
                     <div class="menu">
                         <i class="fa fa-calendar-plus-o" aria-hidden="true"></i>
                         <p>Workouts</p>
@@ -104,44 +104,45 @@
                 </div>
             </div>
 
-            <div class="mHeader">
-                <h1>Plans</h1>
-                <button>Add Plan</button>
-            </div>
-
-            <div class="plan_list">
-                <!-- <div class="plan">
-                    <div class="green_circle"></div>
-                    <div class="main">
-                        <div class="details">
-                            <p>Plan Name</p>
-                            <p>Plan validity</p>
-                        </div>
-                        <p class="price">Price here</p>
+            <div class="pageHolder">
+                <div class="header_holder">
+                    <h1>Create Trophy</h1>
+                    <button onclick="createTrophy()">Create</button>
+                </div>
+                <div class="formHolder">
+                    <div class="trophy_title">
+                        <p>Media</p>
+                        <input id="mFile" type="file">
                     </div>
-                </div> -->
-            </div>
-            <div class="add_plan">
-                <h2>Add Plan</h2>
-                <div class="plan_form">
-                    <p>Plan Name</p>
-                    <input type="text" id="planName" placeholder="plan name...">
 
-                    <p>Plan Validity (in months)</p>
-                    <input type="number" id="planValidity" placeholder="plan validy...">
+                    <img id="image_trophy" src="http://84.95.246.17:8080/user-content/tip2.jpg" alt="">
+                    <div class="trophy_title">
+                        <p>Trophy Name</p>
+                        <input id="name" type="text">
+                    </div>
 
-                    <p>Plan Price (in USD)</p>
-                    <input type="number" id="planCost" placeholder="plan price...">
-                    <button onclick="addPlan()">Add Plan</button>
+                    <div class="trophy_title">
+                        <p>Trophy Requirements (steps)</p>
+                        <input id="req" placeholder="200, 500, e.t.c" type="number">
+                    </div>
+
+                    <div class="trophy_title">
+                        <p>Trophy Type</p>
+                        <select name="" id="mType">
+                            <option value="Running">Running</option>
+                            <option value="Workout">Workout</option>
+                        </select>
+                    </div>
                 </div>
             </div>
+
         </div>
     </div>
 
     <script src="https://kit.fontawesome.com/ac7f9a4329.js" crossorigin="anonymous"></script>
     <script src="<?php bloginfo('template_directory'); ?>/panel/js/variables.js"></script>
     <script src="<?php bloginfo('template_directory'); ?>/panel/js/header/header.js"></script>
-    <script src="<?php bloginfo('template_directory'); ?>/panel/js/plans/plans.js"></script>
+    <script src="<?php bloginfo('template_directory'); ?>/panel/js/trophies/create_trophy.js"></script>
 </body>
 
 </html>

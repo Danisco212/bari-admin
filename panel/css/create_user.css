@@ -53,3 +53,10 @@
     width: 200px;
     outline: none;
 }
+
+@media screen and (max-width: 768px) {
+    .field_holdr input{
+        max-width: 100%;
+        width: 100%;
+    }
+}

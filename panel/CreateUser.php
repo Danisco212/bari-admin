@@ -36,7 +36,7 @@
             </div>
             <p style="margin-top: 30px; color: gray; font-size: 12px;">Features</p>
             <div class="menu_list">
-                <a href="">
+                <a href="http://localhost/wordpress/dashboard/">
                     <div class="menu">
                         <i class="fa fa-home" aria-hidden="true"></i>
                         <p>Dashboard</p>
@@ -61,6 +61,20 @@
                     <div class="menu">
                         <i class="fa fa-money" aria-hidden="true"></i>
                         <p>Plans</p>
+                    </div>
+                </a>
+
+                <a href="http://localhost/wordpress/trophies/">
+                    <div class="menu">
+                        <i class="fa fa-trophy" aria-hidden="true"></i>
+                        <p>Trophies</p>
+                    </div>
+                </a>
+
+                <a href="http://localhost/wordpress/workouts">
+                    <div class="menu">
+                        <i class="fa fa-calendar-plus-o" aria-hidden="true"></i>
+                        <p>Workouts</p>
                     </div>
                 </a>
             </div>
@@ -99,27 +113,27 @@
             <div class="form_holdr">
                 <div class="field_holdr">
                     <p>Full name</p>
-                    <input type="text" name="" id="">
+                    <input type="text" name="" id="uFullname">
                 </div>
 
                 <div class="field_holdr">
                     <p>Email</p>
-                    <input type="text" name="" id="">
+                    <input type="text" name="" id="uEmail">
                 </div>
 
                 <div class="field_holdr">
                     <p>Username</p>
-                    <input type="text" name="" id="">
+                    <input type="text" name="" id="uUsername">
                 </div>
 
                 <div class="field_holdr">
                     <p>Password</p>
-                    <input type="text" name="" id="">
+                    <input type="text" name="" id="uPassword">
                 </div>
 
                 <div class="field_holdr">
                     <p>Role</p>
-                    <select name="" id="">
+                    <select name="" id="uRole">
                         <option value="ADMIN">Admin</option>
                         <option value="GOLD">Gold</option>
                         <option value="REGULAR">Regular</option>
@@ -128,9 +142,9 @@
 
                 <div class="field_holdr">
                     <p>Gender</p>
-                    <select name="" id="">
-                        <option value="ADMIN">Male</option>
-                        <option value="GOLD">Female</option>
+                    <select name="" id="uGender">
+                        <option value="MALE">Male</option>
+                        <option value="FEMALE">Female</option>
                     </select>
                 </div>
             </div>
@@ -141,7 +155,7 @@
     <script src="https://kit.fontawesome.com/ac7f9a4329.js" crossorigin="anonymous"></script>
     <script src="<?php bloginfo('template_directory'); ?>/panel/js/variables.js"></script>
     <script src="<?php bloginfo('template_directory'); ?>/panel/js/header/header.js"></script>
-    <script src="<?php bloginfo('template_directory'); ?>/panel/js/user/createUser.js"></script>
+    <script src="<?php bloginfo('template_directory'); ?>/panel/js/users/createUser.js"></script>
 </body>
 
 </html>

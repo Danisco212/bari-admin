@@ -37,7 +37,6 @@ function getUserDetails() {
     })
         .then(res => res.json())
         .then(data => {
-            console.log(data)
             document.getElementById("admin_name").innerText = data.userDetail.fullName
             document.getElementById("admin_img").src = data.userDetail.profileImgUrl ?? "http://localhost/wordpress/wp-content/themes/Final%20Theme/images/new-logo.png"
         })

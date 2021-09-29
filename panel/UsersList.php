@@ -35,7 +35,7 @@
             </div>
             <p style="margin-top: 30px; color: gray; font-size: 12px;">Features</p>
             <div class="menu_list">
-                <a href="">
+                <a href="http://localhost/wordpress/dashboard/">
                     <div class="menu">
                         <i class="fa fa-home" aria-hidden="true"></i>
                         <p>Dashboard</p>
@@ -60,6 +60,20 @@
                     <div class="menu">
                         <i class="fa fa-money" aria-hidden="true"></i>
                         <p>Plans</p>
+                    </div>
+                </a>
+
+                <a href="http://localhost/wordpress/trophies/">
+                    <div class="menu">
+                        <i class="fa fa-trophy" aria-hidden="true"></i>
+                        <p>Trophies</p>
+                    </div>
+                </a>
+
+                <a href="http://localhost/wordpress/workouts">
+                    <div class="menu">
+                        <i class="fa fa-calendar-plus-o" aria-hidden="true"></i>
+                        <p>Workouts</p>
                     </div>
                 </a>
             </div>
@@ -117,10 +131,10 @@
                                 <p>Username</p>
                             </div>
                         </div>
-                        <p>Email</p>
-                        <p>Role</p>
-                        <p>-</p>
-                        <p>Weight</p>
+                        <p class="list_email">Email</p>
+                        <p class="list_role">Role</p>
+                        <p class="list_plan">-</p>
+                        <p class="list_weight">Weight</p>
                         <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                     </div> -->
                 </div>
