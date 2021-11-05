@@ -47,7 +47,7 @@ function workoutCard(workout) {
     card.className = "workout"
 
     var img = document.createElement('img')
-    img.src = "http://localhost/wordpress/wp-content/themes/Bari%20Theme/images/new-logo.png"
+    img.src = workout.dataUrl ? workout.dataUrl : "http://localhost/wordpress/wp-content/themes/Bari%20Theme/images/new-logo.png"
 
     var dets = document.createElement('div')
     dets.className = "dets"

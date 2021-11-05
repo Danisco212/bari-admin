@@ -25,6 +25,9 @@ function getUsers() {
             })
 
             drawGraph([regUsers, goldUsers, adminUsers])
+            document.getElementById("g_user").innerText = goldUsers
+            document.getElementById("r_user").innerText = regUsers
+            document.getElementById("a_user").innerText = adminUsers
         })
         .catch(err => {
             // show error

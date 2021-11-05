@@ -10,6 +10,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/panel/css/header.css">
+    <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/panel/css/users.css">
     <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/panel/css/dashboard.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -125,7 +126,7 @@
                                     <i class="fa fa-user-o" style="color: #25b5c5;" aria-hidden="true"></i>
                                 </div>
                                 <div class="stat_det">
-                                    <h4 id="user_count">2k</h4>
+                                    <h4 id="user_count">-</h4>
                                     <p>Users</p>
                                 </div>
                             </div>
@@ -135,8 +136,8 @@
                                     <i class="fa fa-user-o" style="color: #F70E93;" aria-hidden="true"></i>
                                 </div>
                                 <div class="stat_det">
-                                    <h4>2k</h4>
-                                    <p>Users</p>
+                                    <h4 id="r_user">-</h4>
+                                    <p>Regular</p>
                                 </div>
                             </div>
 
@@ -145,8 +146,8 @@
                                     <i class="fa fa-user-o" style="color: #DBF212;" aria-hidden="true"></i>
                                 </div>
                                 <div class="stat_det">
-                                    <h4>2k</h4>
-                                    <p>Users</p>
+                                    <h4 id="g_user">-</h4>
+                                    <p>Gold</p>
                                 </div>
                             </div>
 
@@ -155,8 +156,8 @@
                                     <i class="fa fa-user-o" style="color: #1E1DF4;" aria-hidden="true"></i>
                                 </div>
                                 <div class="stat_det">
-                                    <h4>2k</h4>
-                                    <p>Users</p>
+                                    <h4 id="a_user">-</h4>
+                                    <p>Admin</p>
                                 </div>
                             </div>
                         </div>
@@ -169,6 +170,26 @@
                         <canvas id="user_type_chart"></canvas>
                     </div>
                 </div>
+
+                <div class="users_holder">
+                    <div class="header">
+                        <div class="actions">
+                            <p>Search:</p>
+                            <input id="search_user" type="text">
+                            <a href="http://localhost/wordpress/create-user/">Add User</a>
+                        </div>
+                    </div>
+                    <div class="table_header">
+                        <p>User</p>
+                        <p>Email</p>
+                        <p>Role</p>
+                        <p>Plan</p>
+                        <p>Weight</p>
+                        <p>Actions</p>
+                    </div>
+                    <div class="user_list">
+                    </div>
+                </div>
             </div>
 
         </div>
@@ -178,6 +199,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
     <script src="<?php bloginfo('template_directory'); ?>/panel/js/variables.js"></script>
     <script src="<?php bloginfo('template_directory'); ?>/panel/js/header/header.js"></script>
+    <script src="<?php bloginfo('template_directory'); ?>/panel/js/users/users.js"></script>
     <script src="<?php bloginfo('template_directory'); ?>/panel/js/dashboard/dashboard.js"></script>
 </body>
 

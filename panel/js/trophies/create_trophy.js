@@ -9,30 +9,50 @@ document.getElementById("mFile").addEventListener('change', function (e) {
 })
 
 document.getElementById("mType").disbled = true
+var mName = document.getElementById('name')
+var req = document.getElementById('req')
 
 var loading = false
 
 function createTrophy() {
     if (loading) { return }
     // validate fields
-    var name = document.getElementById('name').value
-    var req = document.getElementById('req').value
 
-    if (name.length > 0 && req.length > 0) {
-        var trophy = {
-            "image": "",
-            "name": name,
-            "target": parseInt(req)
-        }
-        postTrophy(trophy)
-        // console.log(trophy)
+    if (mName.value.length > 0 && req.value.length > 0) {
+        saveImage(document.getElementById("mFile").files[0])
     } else {
         alert("Fill all fields to create workout")
     }
 }
 
-function postTrophy(trophy) {
+function saveImage(file) {
     loading = true
+    var formData = new FormData()
+    formData.append("content", file)
+
+    fetch(`${baseUrl}auth/upload`, {
+        method: 'POST',
+        headers: {
+            "Authorization": "Bearer " + cookies.bari_token
+        },
+        body: formData
+    })
+        .then(res => res.text())
+        .then(data => {
+            var trophy = {
+                "image": data,
+                "name": mName.value,
+                "target": parseInt(req.value)
+            }
+            postTrophy(trophy)
+        })
+        .catch(err => {
+            console.log(err)
+            loading = false
+        })
+}
+
+function postTrophy(trophy) {
     fetch(`${baseUrl}trophies/add/runingTrophy`, {
         method: "POST",
         headers: {

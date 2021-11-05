@@ -110,7 +110,7 @@
             </div>
 
             <div class="plan_list">
-                <!-- <div class="plan">
+                <div class="plan">
                     <div class="green_circle"></div>
                     <div class="main">
                         <div class="details">
@@ -118,8 +118,12 @@
                             <p>Plan validity</p>
                         </div>
                         <p class="price">Price here</p>
+                        <div class="actionHolder">
+                            <button>Activate</button>
+                            <button class="red">Delete</button>
+                        </div>
                     </div>
-                </div> -->
+                </div>
             </div>
             <div class="add_plan">
                 <h2>Add Plan</h2>

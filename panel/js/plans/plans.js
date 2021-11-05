@@ -9,7 +9,7 @@ function getPlans() {
         .then(data => {
             console.log(data)
             if (data) {
-                document.getElementsByClassName("plan_list")[0].innerHTML=""
+                // document.getElementsByClassName("plan_list")[0].innerHTML=""
                 data.forEach(plan => {
                     document.getElementsByClassName("plan_list")[0].appendChild(planCard(plan))
                 });
@@ -47,14 +47,84 @@ function planCard(plan) {
     price.className = "price"
     price.innerText = "$" + plan.planCost
 
+    var activate = document.createElement('button')
+    activate.innerText = "Activate"
+    activate.addEventListener('click', activatePlan.bind(this, plan.planId))
+
+    var deleteBtn = document.createElement('button')
+    deleteBtn.innerText = "Delete"
+    deleteBtn.className = "red"
+    deleteBtn.addEventListener('click', deletePlan.bind(this, plan.planId))
+
+    var actionHolder = document.createElement('div')
+    actionHolder.className = "actionHolder"
+
+    if (!plan.active) {
+        actionHolder.appendChild(activate)
+    }
+    actionHolder.appendChild(deleteBtn)
+
+
     main.appendChild(details)
     main.appendChild(price)
+    main.appendChild(actionHolder)
 
     card.appendChild(circle)
     card.appendChild(main)
 
 
     return card
+}
+
+var loading = false
+function deletePlan(planId) {
+    var conf = confirm("Delete this plan?")
+    if (conf) {
+        loading = true
+        fetch(`${baseUrl}subscription/delete/plan/${planId}`, {
+            method: 'DELETE',
+            headers: {
+                "Authorization": "Bearer " + cookies.bari_token,
+                "Content-Type": "application/json"
+            }
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+            })
+            .catch(err => {
+                console.log(err)
+            })
+            .finally(() => {
+                loading = false
+            })
+    }
+
+}
+
+function activatePlan(planId) {
+    var conf = confirm("Activate this plan?")
+    if (conf) {
+        loading = true
+        fetch(`${baseUrl}subscription/activatePlan/${planId}`, {
+            method: 'GET',
+            headers: {
+                "Authorization": "Bearer " + cookies.bari_token,
+                "Content-Type": "application/json"
+            }
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+            })
+            .catch(err => {
+                console.log(err)
+            })
+            .finally(() => {
+                loading = false
+            })
+    }
+
 }
 
 function addPlan() {
@@ -79,7 +149,7 @@ function addPlan() {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-                if(data.success){
+                if (data.success) {
                     alert("Plan has been added")
                     planName.innerHTML = ""
                     planValidity.innerHTML = ""

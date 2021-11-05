@@ -168,17 +168,6 @@ $id = isset($_GET['id']) ? $_GET['id'] : die();
                     <p>Actions</p>
                 </div>
                 <div class="user_list">
-                    <!-- <div class="user">
-                        <div class="dets">
-                            <p>Name</p>
-                            <p>Username</p>
-                        </div>
-                        <p>Email</p>
-                        <p>Role</p>
-                        <p>-</p>
-                        <p>Weight</p>
-                        <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
-                    </div> -->
                 </div>
             </div>
         </div>

@@ -20,44 +20,47 @@ function getCateDetails() {
 }
 getCateDetails()
 
-function createProgram() {
+var loading = false
+var duration = document.getElementById('duration')
+var mName = document.getElementById('wName')
 
-    var duration = document.getElementById('duration').value
-    var name = document.getElementById('wName').value
+function createProgram() {
     var fileHolrder = document.getElementById('media').files
     console.log(fileHolrder)
 
-    var workout = {
-        "duration": parseFloat(duration),
-        "name": name,
-        "dataUrl": "",
-        "videoUrl": "",
-        "workoutCategory": {
-            "id": catId
-        }
+    if (duration.value.length > 0 && mName.value.length > 0) {
+        saveImage(fileHolrder[0])
+    } else {
+        alert("Please fill all fields")
     }
+}
 
-    console.log(workout)
-
-    saveImage(fileHolrder[0])
-
-    // fetch(`${baseUrl}workout/add`, {
-    //     method: 'POST',
-    //     headers: {
-    //         "Authorization": "Bearer " + cookies.bari_token
-    //     },
-    //     body: JSON.stringify(workout)
-    // })
-    //     .then(res => res.json())
-    //     .then(data => {
-    //         console.log(data)
-    //     })
-    //     .catch(err => {
-    //         console.log(err)
-    //     })
+function addWorkout(workout) {
+    fetch(`${baseUrl}workout/add`, {
+        method: 'POST',
+        headers: {
+            "Authorization": "Bearer " + cookies.bari_token,
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(workout)
+    })
+        .then(res => res.json())
+        .then(data => {
+            if (data.success) {
+                alert(data.message)
+                location.href = "http://localhost/wordpress/program/?id=" + catId
+            } else {
+                alert("Something went wrong, try again later")
+            }
+        })
+        .catch(err => {
+            console.log(err)
+        })
+        .finally(() => { loading = false })
 }
 
 async function saveImage(file) {
+    loading = true
     var formData = new FormData()
     formData.append("content", file)
 
@@ -68,11 +71,21 @@ async function saveImage(file) {
         },
         body: formData
     })
-        .then(res => res.json())
+        .then(res => res.text())
         .then(data => {
-            console.log(data)
+            var workout = {
+                "duration": parseFloat(duration.value),
+                "name": mName.value,
+                "dataUrl": data,
+                "videoUrl": "",
+                "workoutCategory": {
+                    "id": catId
+                }
+            }
+            addWorkout(workout)
         })
         .catch(err => {
             console.log(err)
+            loading = false
         })
 }
