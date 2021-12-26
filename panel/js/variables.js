@@ -1,4 +1,4 @@
-const baseUrl = "http://84.95.246.17:8080/"
+const baseUrl = "http://84.95.246.17:8080/fitness-application/"
 
 const cookies = document.cookie
     .split(';')

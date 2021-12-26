@@ -30,7 +30,7 @@ function login() {
                 if (data.status == 'SUCCESS') {
                     document.cookie = `bari_token=${data.obj.accessToken};path=/`
                     document.cookie = `bari_id=${data.userId};path=/`
-                    location.href = "http://localhost/wordpress/users"
+                    location.href = "http://localhost:8888/Bari/admin-users/"
                 } else if (data.status == 403) {
                     err.innerText = "Invalid Credentials"
                     err.style.display = "block"
@@ -49,5 +49,5 @@ function login() {
 
 // check if the user is already logged in
 if (cookies.bari_token && cookies.bari_token.length > 0) {
-    location.href = "http://localhost/wordpress/users/"
+    location.href = "http://localhost:8888/Bari/admin-users/"
 }

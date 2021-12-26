@@ -49,7 +49,7 @@ function postTip() {
             if(data.tips){
                 // go to details page
                 alert("Tip has beem added")
-                location.href = "http://localhost/wordpress/tip-detail?id=" + data.tips[0].postId
+                location.href = "http://localhost:8888/Bari/admin-tip-detail?id=" + data.tips[0].postId
             }
         })
         .catch(err => {

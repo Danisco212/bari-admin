@@ -42,7 +42,7 @@ function createUser() {
                     if (data.includes("UserId")) {
                         // worked
                         alert("User has been created")
-                        location.href = "http://localhost/wordpress/user?id=" + data.split(": ")[1]
+                        location.href = "http://localhost:8888/Bari/admin-user?id=" + data.split(": ")[1]
                     } else if (data.includes("not available")) {
                         alert("Username not available")
                     } else {

@@ -36,7 +36,7 @@ function userCard(user) {
 
     var name = document.createElement('a')
     name.innerText = user.userDetail.fullName
-    name.href = "http://localhost/wordpress/user?id=" + user.userId
+    name.href = "http://localhost:8888/Bari/admin-user?id=" + user.userId
 
     var username = document.createElement('p')
     username.innerText = "@" + user.username

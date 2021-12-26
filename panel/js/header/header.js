@@ -14,7 +14,7 @@ function logout() {
     if (userOpt) {
         document.cookie = "bari_token=;path=/";
         document.cookie = "bari_id=;path=/";
-        location.href = "http://localhost/wordpress/login/"
+        location.href = "http://localhost:8888/Bari/admin-login/"
     }
 }
 
@@ -24,7 +24,7 @@ if (cookies.bari_token) {
     getUserDetails()
 } else {
     // logout user
-    location.href = "http://localhost/wordpress/login/"
+    location.href = "http://localhost:8888/Bari/admin-login/"
 }
 
 // get the user profile
