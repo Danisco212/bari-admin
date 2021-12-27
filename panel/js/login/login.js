@@ -1,10 +1,11 @@
 let loading = false;
+var username = document.getElementById('username')
+var password = document.getElementById('password')
+var terms = document.getElementById("terms")
+var err = document.getElementById("error_msg")
 
 function login() {
-    var username = document.getElementById('username')
-    var password = document.getElementById('password')
-    var terms = document.getElementById("terms")
-    var err = document.getElementById("error_msg")
+
     err.style.display = "none"
 
     if (!terms.checked) {
@@ -28,10 +29,7 @@ function login() {
             .then(res => res.json())
             .then(data => {
                 if (data.status == 'SUCCESS') {
-                    var expireDate = new Date(new Date().getTime() + 1 * 60 * 1000)
-                    document.cookie = `bari_token=${data.obj.accessToken};expires=${expireDate};path=/`
-                    document.cookie = `bari_id=${data.userId};expires=${expireDate};path=/`
-                    location.href = "http://localhost:8888/Bari/admin-users/"
+                    getUserDetails(data.userId, data.obj.accessToken)
                 } else if (data.status == 403) {
                     err.innerText = "Invalid Credentials"
                     err.style.display = "block"
@@ -48,9 +46,33 @@ function login() {
 
 }
 
-document.getElementById("password").addEventListener("keyup", e=>{
-    console.log(e.key)
-    if(e.key === "Enter"){
+function getUserDetails(id, token) {
+    fetch(`${baseUrl}user/user/${id}`, {
+        method: 'GET',
+        headers: {
+            "Authorization": `Bearer ${token}`
+        }
+    })
+        .then(res => res.json())
+        .then(data => {
+            if (data.role === "ADMIN") {
+                var expireDate = new Date(new Date().getTime() + 1 * 60 * 1000)
+                document.cookie = `bari_token=${token};expires=${expireDate};path=/`
+                document.cookie = `bari_id=${id};expires=${expireDate};path=/`
+                location.href = "http://localhost:8888/Bari/admin-users/"
+            } else {
+                err.innerText = "You are not an admin"
+                err.style.display = "block"
+            }
+            // console.log(data)
+        })
+        .catch(err => {
+            console.log(err)
+        })
+}
+
+document.getElementById("password").addEventListener("keyup", e => {
+    if (e.key === "Enter") {
         login()
     }
 })
