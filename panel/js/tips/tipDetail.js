@@ -48,22 +48,44 @@ function deleteTip() {
     if (conf) {
         loading = true
         // delete
-        var xhr = new XMLHttpRequest();
-        xhr.withCredentials = true;
+        // var xhr = new XMLHttpRequest();
+        // xhr.withCredentials = true;
 
-        xhr.addEventListener("readystatechange", function () {
-            if (this.readyState === 4) {
-                loading = false
-                alert("Tip Deleted")
-                console.log(this.responseText);
+        // xhr.addEventListener("readystatechange", function () {
+        //     if (this.readyState === 4) {
+        //         loading = false
+        //         alert("Tip Deleted")
+        //         console.log(this.responseText);
+        //     }
+        // });
+
+        // xhr.open("DELETE", `${baseUrl}post/${postId}`);
+        // xhr.setRequestHeader("user_id", cookies.bari_id);
+        // xhr.setRequestHeader("Authorization", `Bearer ${cookies.bari_token}`);
+
+        // xhr.send();
+        fetch(`${baseUrl}deleteTip/${postId}`,
+        {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer "+cookies.bari_token
             }
-        });
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            console.log(data)
+            if(data.success){
+                location.href = "http://localhost:8888/Bari/admin-tips"
+            }
+        })
+        .catch(err=>{
+            console.log("The error is:=====", err)
+        })
+        .finally(()=>{
+            loading = false
+        })
 
-        xhr.open("DELETE", `${baseUrl}post/${postId}`);
-        xhr.setRequestHeader("user_id", cookies.bari_id);
-        xhr.setRequestHeader("Authorization", `Bearer ${cookies.bari_token}`);
-
-        xhr.send();
         // fetch(`${baseUrl}post/${postId}`, {
         //     method: 'DELETE',
         //     headers: {
