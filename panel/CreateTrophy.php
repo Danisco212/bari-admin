@@ -56,10 +56,10 @@
                     </div>
                 </a>
 
-                <a href="http://localhost:8888/Bari/admin-plans/">
+                <a href="http://localhost:8888/Bari/admin-discounts/">
                     <div class="menu">
                         <i class="fa fa-money" aria-hidden="true"></i>
-                        <p>Plans</p>
+                        <p>Discounts</p>
                     </div>
                 </a>
 

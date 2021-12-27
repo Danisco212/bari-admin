@@ -1,6 +1,6 @@
 <?php
 
-/* Template Name: Create Tip */
+/* Template Name: Discounts */
 
 ?>
 
@@ -10,14 +10,15 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/panel/css/header.css">
-    <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/panel/css/tip.css">
+    <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/panel/css/plans.css">
+    <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/panel/css/discount.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700&display=swap" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barilifestyle Post Tip</title>
+    <title>Barilifestyle Discounts</title>
 </head>
 
 <body>
@@ -50,14 +51,14 @@
                 </a>
 
                 <a href="http://localhost:8888/Bari/admin-tips/">
-                    <div class="menu selected">
+                    <div class="menu">
                         <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
                         <p>Tips</p>
                     </div>
                 </a>
 
                 <a href="http://localhost:8888/Bari/admin-discounts/">
-                    <div class="menu">
+                    <div class="menu selected">
                         <i class="fa fa-money" aria-hidden="true"></i>
                         <p>Discounts</p>
                     </div>
@@ -104,36 +105,49 @@
                 </div>
             </div>
 
-            <div class="head_holder">
-                <h1 style="margin-right: 20px;">Post Tip</h1>
-                <button onclick="postTip()">Post</button>
-            </div>
-            <div class="form_holder">
-
-                <div class="tip_title">
-                    <p>Media</p>
-                    <input id="mFile" type="file">
-                </div>
-
-                <img id="image_tip" src="http://84.95.246.17:8080/user-content/tip2.jpg" alt="">
-                <div class="tip_title">
-                    <p>Title</p>
-                    <input id="title" type="text">
-                </div>
-
-                <div class="tip_body">
-                    <p>Tip Body</p>
-                    <textarea name="" id="mBody" cols="30" rows="10"></textarea>
-                </div>
+            <div class="mHeader">
+                <h1>All Discounts</h1>
+                <button>Add Discount</button>
             </div>
 
+            <div id="discount_holder" class="plan_list">
+                <!-- <div class="discount">
+                    <p>Code *</p>
+                    <input type="text" value="ERT%^&&!">
+                    <p>Amount *</p>
+                    <input type="number" value="100">
+                    <p>Expiry Date</p>
+                    <input type="datetime-local" placeholder="YYYY-MM-DD" name="expire-date" id="">
+                    <p>Active Status *</p>
+                    <div class="active_status">
+                        <input type="radio" checked id="active" name="fav_language" value="true">
+                        <label for="active">Active</label><br>
+                        <input type="radio" id="inactive" name="fav_language" value="false">
+                        <label for="inactive">Inactive</label><br>
+                    </div>
+                    <p>Discount Type *</p>
+                    <div class="active_status">
+                        <input type="radio" id="percent" name="discount_type" value="true">
+                        <label for="percent">Percent</label><br>
+                        <input type="radio" checked id="specific" name="discount_type" value="false">
+                        <label for="specific">Specific Amount</label><br>
+                    </div>
+                    <p>Number of Uses *</p>
+                    <input type="number">
+                    <p>Total allowed uses *</p>
+                    <input type="number">
+                    <button>Save</button>
+                    <button>Delete</button>
+                </div> -->
+            </div>
         </div>
     </div>
 
     <script src="https://kit.fontawesome.com/ac7f9a4329.js" crossorigin="anonymous"></script>
     <script src="<?php bloginfo('template_directory'); ?>/panel/js/variables.js"></script>
     <script src="<?php bloginfo('template_directory'); ?>/panel/js/header/header.js"></script>
-    <script src="<?php bloginfo('template_directory'); ?>/panel/js/tips/tip.js"></script>
+    <!-- <script src="<?php bloginfo('template_directory'); ?>/panel/js/plans/plans.js"></script> -->
+    <script src="<?php bloginfo('template_directory'); ?>/panel/js/discount/discounts.js"></script>
 </body>
 
 </html>
