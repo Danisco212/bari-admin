@@ -52,3 +52,37 @@ function createSessionCard(plan){
 
     return card;
 }
+
+var loading = false
+
+function createSession(){
+    if(document.getElementById("newName").value == "" || document.getElementById("newDesc").value == ""){
+        return
+    }
+    var newSession = {
+        name: document.getElementById("newName").value,
+        desccription: document.getElementById("newDesc").value,
+        workoutCategory: {
+            id: workoutId
+        }
+    }
+    loading = true
+    fetch(`${baseUrl}workout/add/SubCategory`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer "+cookies.bari_token
+        },
+        body: JSON.stringify(newSession)
+    })
+    .then(res=>res.json())
+    .then(data=>{
+        console.log(data)
+    })
+    .catch(err=>{
+        console.log(err)
+    })
+    .finally(()=>{
+        loading = false
+    })
+}

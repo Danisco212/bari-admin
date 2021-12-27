@@ -46,6 +46,56 @@
     margin-right: 20px;
 }
 
+.workout .dets{
+    flex: 1;
+    margin-right: 10px;
+}
+
 .workout .dets p{
     font-size: 14px;
+}
+
+.add_sub{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: white;
+    box-shadow: 3px 0px 10px rgba(133, 133, 133, 0.123);
+}
+
+.add_sub p{
+    font-size: 12px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.add_sub input[type="text"], .add_sub input[type="number"]{
+    padding: 0px 10px;
+    width: 100%;
+    height: 40px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+.add_sub textarea{
+    padding: 0px 10px;
+    width: 100%;
+    height: 140px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+.add_sub button{
+    background-color: #25b5c5;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    width: 100%;
+    height: 45px;
+    margin: 10px 0px;
+    font-size: 14px;
+    cursor: pointer;
 }

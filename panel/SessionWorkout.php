@@ -107,10 +107,6 @@ $id = isset($_GET['id']) ? $_GET['id'] : die();
             </div>
 
             <div class="pageHolder">
-                <div class="header_holder">
-                    <h1 id="programName"></h1>
-                    <button id="add_btn">Add Workout</button>
-                </div>
                 <div class="workoutHolder">
                     <h4 id="workoutTitle" style="color: gray;"></h4>
                     <p style="font-size: 12px; margin-top: 5px" id="workoutDescription"></p>
@@ -123,6 +119,27 @@ $id = isset($_GET['id']) ? $_GET['id'] : die();
                             </div>
                         </div> -->
                     </div>
+                </div>
+                <div class="add_sub">
+                    <p>Workout Name</p>
+                    <input type="text" name="" id="newName">
+
+                    <p>Workout Description</p>
+                    <textarea name="" id="newDesc" cols="30" rows="10"></textarea>
+
+                    <p>Workout Duration</p>
+                    <input type="number" name="" id="newDuration">
+
+                    <p>Workout Type</p>
+                    <input type="radio" name="workout_type" id="reps">
+                    <label for="reps">Reps</label><br>
+                    <input type="radio" name="workout_type" id="timed">
+                    <label for="timed">Timed</label><br>
+
+                    <p>Workout Image</p>
+                    <input type="file" name="" id="newImage">
+
+                    <button onclick="uploadImage()">Create Workout</button>
                 </div>
             </div>
 

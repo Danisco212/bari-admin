@@ -107,9 +107,18 @@ $id = isset($_GET['id']) ? $_GET['id'] : die();
             </div>
 
             <div class="pageHolder">
-                <div class="header_holder">
+                <!-- <div class="header_holder">
                     <h1 id="programName"></h1>
                     <button id="add_btn">Add Workout Session</button>
+                </div> -->
+                <div class="add_sub">
+                    <p>Session Name</p>
+                    <input type="text" name="" id="newName">
+
+                    <p>Session Desctiption</p>
+                    <input type="text" name="" id="newDesc">
+
+                    <button onclick="createSession()">Add Session</button>
                 </div>
                 <div class="workoutHolder">
                     <h4 id="workoutTitle" style="color: gray;"></h4>
