@@ -28,8 +28,9 @@ function login() {
             .then(res => res.json())
             .then(data => {
                 if (data.status == 'SUCCESS') {
-                    document.cookie = `bari_token=${data.obj.accessToken};path=/`
-                    document.cookie = `bari_id=${data.userId};path=/`
+                    var expireDate = new Date(new Date().getTime() + 1 * 60 * 1000)
+                    document.cookie = `bari_token=${data.obj.accessToken};expires=${expireDate};path=/`
+                    document.cookie = `bari_id=${data.userId};expires=${expireDate};path=/`
                     location.href = "http://localhost:8888/Bari/admin-users/"
                 } else if (data.status == 403) {
                     err.innerText = "Invalid Credentials"

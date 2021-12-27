@@ -126,8 +126,8 @@
                                     <i class="fa fa-user-o" style="color: #25b5c5;" aria-hidden="true"></i>
                                 </div>
                                 <div class="stat_det">
-                                    <h4 id="user_count">-</h4>
-                                    <p>Users</p>
+                                    <h4 id="prem_user">-</h4>
+                                    <p>Premium</p>
                                 </div>
                             </div>
 
@@ -146,8 +146,8 @@
                                     <i class="fa fa-user-o" style="color: #DBF212;" aria-hidden="true"></i>
                                 </div>
                                 <div class="stat_det">
-                                    <h4 id="g_user">-</h4>
-                                    <p>Gold</p>
+                                    <h4 id="p_user">-</h4>
+                                    <p>Pro</p>
                                 </div>
                             </div>
 
@@ -168,6 +168,10 @@
                     <div class="user_graphHolder">
                         <h4 style="margin-bottom: 10px;">User Types</h4>
                         <canvas id="user_type_chart"></canvas>
+                    </div>
+                    <div class="user_graphHolder">
+                        <h4 style="margin-bottom: 10px;">Gender Percentage</h4>
+                        <canvas id="user_gender_chart"></canvas>
                     </div>
                 </div>
 

@@ -33,7 +33,7 @@ function programCard(program) {
     card.appendChild(name)
 
     card.addEventListener('click', function (e) {
-        location.href = "http://localhost/wordpress/program?id=" + program.id
+        location.href = "http://localhost:8888/Bari/admin-workout-category?id=" + program.id
     })
 
     return card

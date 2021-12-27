@@ -107,8 +107,9 @@
     background-color: white;
     border-radius: 4px;
     display: flex;
+    justify-content: space-around;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     box-shadow: 3px 0px 10px rgba(133, 133, 133, 0.123);
 }
 #user_type_chart{
@@ -117,6 +118,7 @@
 
 .user_graphHolder{
     display: flex;
-    align-items: center;
+    justify-content: space-between;
+    align-items:center ;
     flex-direction: column;
 }

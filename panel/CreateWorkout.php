@@ -123,7 +123,6 @@ $id = isset($_GET['id']) ? $_GET['id'] : die();
 
                     <p>Workout Category</p>
                     <input type="text" name="" id="catName">
-
                 </div>
             </div>
 

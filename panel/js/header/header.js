@@ -22,6 +22,7 @@ function logout() {
 
 if (cookies.bari_token) {
     getUserDetails()
+    console.log(cookies.bari_token)
 } else {
     // logout user
     location.href = "http://localhost:8888/Bari/admin-login/"

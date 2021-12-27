@@ -1,6 +1,6 @@
 <?php
 
-/* Template Name: Workout Category */
+/* Template Name: Sub Category Workouts */
 $id = isset($_GET['id']) ? $_GET['id'] : die();
 
 ?>
@@ -109,7 +109,7 @@ $id = isset($_GET['id']) ? $_GET['id'] : die();
             <div class="pageHolder">
                 <div class="header_holder">
                     <h1 id="programName"></h1>
-                    <button id="add_btn">Add Workout Session</button>
+                    <button id="add_btn">Add Workout</button>
                 </div>
                 <div class="workoutHolder">
                     <h4 id="workoutTitle" style="color: gray;"></h4>
@@ -132,7 +132,7 @@ $id = isset($_GET['id']) ? $_GET['id'] : die();
     <script src="https://kit.fontawesome.com/ac7f9a4329.js" crossorigin="anonymous"></script>
     <script src="<?php bloginfo('template_directory'); ?>/panel/js/variables.js"></script>
     <script src="<?php bloginfo('template_directory'); ?>/panel/js/header/header.js"></script>
-    <script src="<?php bloginfo('template_directory'); ?>/panel/js/workouts/workoutCategory.js"></script>
+    <script src="<?php bloginfo('template_directory'); ?>/panel/js/workouts/subCategory.js"></script>
 </body>
 
 </html>
