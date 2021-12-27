@@ -135,8 +135,9 @@
                     <p>Role</p>
                     <select name="" id="uRole">
                         <option value="ADMIN">Admin</option>
-                        <option value="GOLD">Gold</option>
                         <option value="REGULAR">Regular</option>
+                        <option value="PRO">Pro</option>
+                        <option value="PREMIUM">Premium</option>
                     </select>
                 </div>
 
