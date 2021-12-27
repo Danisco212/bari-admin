@@ -122,15 +122,14 @@
                     </div>
 
                     <div class="trophy_title">
-                        <p>Trophy Requirements (steps)</p>
-                        <input id="req" placeholder="200, 500, e.t.c" type="number">
+                        <p>Trophy Requirements (Points = Steps / 1000)</p>
+                        <input id="req" placeholder="2, 5, etc" type="number">
                     </div>
 
                     <div class="trophy_title">
                         <p>Trophy Type</p>
                         <select name="" id="mType">
                             <option value="Running">Running</option>
-                            <option value="Workout">Workout</option>
                         </select>
                     </div>
                 </div>

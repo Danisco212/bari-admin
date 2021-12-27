@@ -29,7 +29,7 @@ function userCard(user) {
     userProf.className = "user_prof"
 
     var img = document.createElement('img')
-    img.src = user.userDetail.profileImgUrl ?? "http://localhost/wordpress/wp-content/themes/Final%20Theme/images/new-logo.png"
+    img.src = user.userDetail.profileImgUrl ?? "http://localhost:8888/Bari/wp-content/themes/Final%20Theme/images/new-logo.png"
 
     var dets = document.createElement('div')
     dets.className = "dets"
@@ -40,6 +40,10 @@ function userCard(user) {
 
     var username = document.createElement('p')
     username.innerText = "@" + user.username
+    username.style.cursor = "pointer"
+    username.addEventListener('click', e=>{
+        location.href = "http://localhost:8888/Bari/admin-user?id=" + user.userId
+    })
 
     dets.appendChild(name)
     dets.appendChild(username)
@@ -78,7 +82,7 @@ function userCard(user) {
     card.appendChild(role)
     card.appendChild(plan)
     card.appendChild(weight)
-    card.appendChild(action)
+    // card.appendChild(action)
 
     return card
 }

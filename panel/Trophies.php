@@ -112,8 +112,6 @@
                 <div class="trophyHolder">
                     <h3>Running Trophies</h3>
                     <div class="runningHolder"></div>
-                    <h3 style="margin-top: 20px;">Workout Trophies</h3>
-                    <div class="workoutHolder"></div>
                 </div>
             </div>
 

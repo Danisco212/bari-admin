@@ -1,5 +1,19 @@
 var user_id = document.getElementById("user_id").innerText
 
+// fill the forms details
+let biceps = document.getElementById("biceps")
+let chest = document.getElementById("chest")
+let hips = document.getElementById("hips")
+let neck = document.getElementById("neck")
+let shoulders = document.getElementById("shoulders")
+let wrist = document.getElementById("wrist")
+let waist = document.getElementById("waist")
+let targetWaist = document.getElementById("targetWaist")
+let targetWater = document.getElementById("targetWater")
+let targetCalories = document.getElementById("targetCalories")
+let targetWeight = document.getElementById("weightTarget")
+let stepTarget = document.getElementById("targetStep")
+
 function getUserDetails() {
     fetch(`${baseUrl}user/user/${user_id}`, {
         method: 'GET',
@@ -75,6 +89,78 @@ function fillDetails(user) {
     document.getElementById('block_user').innerText = user.active ? "Block User" : "Unblock User"
     document.getElementById('block_user').addEventListener('click', blockUnblockUser.bind(this, user.active ? "Block User" : "Unblock User"))
 
+    biceps.value = user.userDetail.circumferenceBiceps
+    chest.value = user.userDetail.circumferenceChest
+    hips.value = user.userDetail.circumferenceHips
+    neck.value = user.userDetail.circumferenceNeck
+    shoulders.value = user.userDetail.circumferenceShoulders
+    wrist.value = user.userDetail.circumferenceWrist
+    waist.value = user.userDetail.circumferenceWaist
+
+    targetWater.value = user.userDetail.targetWater
+    targetWaist.value = user.userDetail.targetWaist
+    targetCalories.value = user.userDetail.targetCalories
+    targetWeight.value = user.userDetail.targetWeight
+    stepTarget.value = user.userDetail.stepTarget
+
+    // {
+    //     "userDetailId"= 6,
+    //     "profileImgUrl"= "string",
+    //     "fullName"= "Daniel Isaac",
+    //     "gender"= "MALE",
+    //     "weight"= 60,
+    //     "height"= 187,
+    //     "circumferenceNeck"= 12,
+    //     "circumferenceShoulders"= 32,
+    //     "circumferenceWaist"= 234,
+    //     "circumferenceWrist"= 21,
+    //     "circumferenceChest"= 0,
+    //     "circumferenceHips"= 235,
+    //     "circumferenceBiceps"= 12,
+    //     "stepTarget"= 10000,
+    //     "targetWaist"= 234,
+    //     "targetWeight"= 60,
+    //     "targetWater"= 5,
+    //     "targetCalories"= 0,
+    //     "dob"= "2021-09-26"
+    // }
+
+}
+
+function saveUserDetails() {
+    fetch(`${baseUrl}user/updateUserDetails`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer " + cookies.bari_token
+        },
+        body: JSON.stringify({
+            "userDetailId": user_id,
+            "circumferenceNeck": neck.value,
+            "circumferenceShoulders": shoulders.value,
+            "circumferenceWaist": waist.value,
+            "circumferenceWrist": wrist.value,
+            "circumferenceChest": chest.value,
+            "circumferenceHips": hips.value,
+            "circumferenceBiceps": biceps.value,
+            "stepTarget": stepTarget.value,
+            "targetWaist": targetWaist.value,
+            "targetWeight": targetWeight.value,
+            "targetWater": targetWater.value,
+            "targetCalories": targetCalories.value,
+        })
+    })
+        .then(res => {
+            if(res.status === 200){
+                location.reload()
+            }
+        })
+        .catch(err => {
+            console.log(err)
+        })
+        .finally(() => {
+
+        })
 }
 
 function blockUnblockUser(message) {

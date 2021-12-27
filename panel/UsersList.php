@@ -120,7 +120,7 @@
                     <p>Role</p>
                     <p>Plan</p>
                     <p>Weight</p>
-                    <p>Actions</p>
+                    <!-- <p>Actions</p> -->
                 </div>
                 <div class="user_list">
                     <!-- <div class="user">

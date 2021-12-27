@@ -47,6 +47,13 @@ function login() {
 
 }
 
+document.getElementById("password").addEventListener("keyup", e=>{
+    console.log(e.key)
+    if(e.key === "Enter"){
+        login()
+    }
+})
+
 // check if the user is already logged in
 if (cookies.bari_token && cookies.bari_token.length > 0) {
     location.href = "http://localhost:8888/Bari/admin-users/"

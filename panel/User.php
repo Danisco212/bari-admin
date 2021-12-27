@@ -115,7 +115,7 @@ $id = isset($_GET['id']) ? $_GET['id'] : die();
                                 <h2 id="fullName">Name here</h2>
                                 <p id="email">your email is here</p>
                                 <div class="actions">
-                                    <button>Edit</button>
+                                    <!-- <button>Edit</button> -->
                                     <button id="block_user">Block User</button>
                                 </div>
                             </div>
@@ -149,6 +149,78 @@ $id = isset($_GET['id']) ? $_GET['id'] : die();
 
                     <button>Upgrade Plan</button>
                 </div>
+            </div>
+
+            <div class="more_details">
+                <h3>More information</h3>
+                <p style="margin-top: 10px;">Body Information</p>
+                <div class="main_holder">
+                    <div class="input_holder">
+                        <label for="">Biceps Circumference</label>
+                        <br>
+                        <input id="biceps" type="number">
+                    </div>
+                    <div class="input_holder">
+                        <label for="">Hips Circumference</label>
+                        <br>
+                        <input id="hips" type="number">
+                    </div>
+                    <div class="input_holder">
+                        <label for="">Chest Circumference</label>
+                        <br>
+                        <input id="chest" type="number">
+                    </div>
+                    <div class="input_holder">
+                        <label for="">Wrist Circumference</label>
+                        <br>
+                        <input id="wrist" type="number">
+                    </div>
+                    <div class="input_holder">
+                        <label for="">Waist Circumference</label>
+                        <br>
+                        <input id="waist" type="number">
+                    </div>
+                    <div class="input_holder">
+                        <label for="">Shoulders Circumference</label>
+                        <br>
+                        <input id="shoulders" type="number">
+                    </div>
+                    <div class="input_holder">
+                        <label for="">Neck Circumference</label>
+                        <br>
+                        <input id="neck" type="number">
+                    </div>
+                </div>
+                <p>Daily Goals</p>
+                <div class="main_holder">
+                    <div class="input_holder">
+                        <label for="">Step Target</label>
+                        <br>
+                        <input id="targetStep" type="number">
+                    </div>
+                    <div class="input_holder">
+                        <label for="">Waist Target</label>
+                        <br>
+                        <input id="targetWaist" type="number">
+                    </div>
+                    <div class="input_holder">
+                        <label for="">Water Target</label>
+                        <br>
+                        <input id="targetWater" type="number">
+                    </div>
+                    <div class="input_holder">
+                        <label for="">Weight Target</label>
+                        <br>
+                        <input id="weightTarget" type="number">
+                    </div>
+                    <div class="input_holder">
+                        <label for="">Calories Target</label>
+                        <br>
+                        <input id="targetCalories" type="number">
+                    </div>
+                </div>
+
+                <button onclick="saveUserDetails()" id="save-details">Save</button>
             </div>
 
             <div class="users_holder">
