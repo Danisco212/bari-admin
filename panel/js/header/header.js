@@ -14,7 +14,8 @@ function logout() {
     if (userOpt) {
         document.cookie = "bari_token=;path=/";
         document.cookie = "bari_id=;path=/";
-        location.href = "http://localhost:8888/Bari/admin-login/"
+        // location.href = "/Bari/admin-login/"
+        location.href = "https://barilifestyle.com/admin-login/"
     }
 }
 
@@ -25,7 +26,8 @@ if (cookies.bari_token) {
     console.log(cookies.bari_token)
 } else {
     // logout user
-    location.href = "http://localhost:8888/Bari/admin-login/"
+    // location.href = "/Bari/admin-login/"
+    location.href = "https://barilifestyle.com/admin-login/"
 }
 
 // get the user profile

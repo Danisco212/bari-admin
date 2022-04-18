@@ -2,7 +2,7 @@
 var workoutId = document.getElementById("cat_id").innerText
 
 function getSubCategories(){
-    fetch(`${baseUrl}workout/getWorkoutCategory?categoryId=${workoutId}`, {
+    fetch(`${baseUrl}programs/days/${workoutId}`, {
         method: "GET",
         headers: {
             "Authorization": "Bearer "+cookies.bari_token
@@ -11,10 +11,10 @@ function getSubCategories(){
     .then(res=>res.json())
     .then(data=>{
         console.log(data.data)
-        document.getElementById("workoutTitle").innerText = data.data.workout.name
-        document.getElementById("workoutDescription").innerText = data.data.workout.description
+        // document.getElementById("workoutTitle").innerText = data.data.workout.name
+        // document.getElementById("workoutDescription").innerText = data.data.workout.description
 
-        data.data.plans.forEach(plan=>{
+        data.data.forEach(plan=>{
             document.getElementById("plan-list").appendChild(createSessionCard(plan))
         })
     })
@@ -33,9 +33,9 @@ function createSessionCard(plan){
     var detailsHolder = document.createElement('div')
     detailsHolder.className = "dets"
     var title = document.createElement('h3')
-    title.innerText = plan.name
+    title.innerText = plan.day
     var workoutSize = document.createElement('p')
-    workoutSize.innerText = plan.workout.length + " Exercise(s)"
+    // workoutSize.innerText = plan.workout.length + " Exercise(s)"
 
     detailsHolder.appendChild(title)
     detailsHolder.appendChild(workoutSize)
@@ -43,11 +43,54 @@ function createSessionCard(plan){
 
     var image = document.createElement('img')
 
+    var deleteHolder = document.createElement('div')
+    deleteHolder.style.display = "flex"
+    deleteHolder.style.flex = 1
+    deleteHolder.style.justifyContent = "flex-end"
+    
+    var deleteImg = document.createElement('img')
+    deleteImg.src = "https://barilifestyle.com/wp-content/themes/BariAdmin/panel/images/delete.png"
+    deleteHolder.appendChild(deleteImg)
+
+    deleteImg.addEventListener('click', function(){
+        if(loading){
+            return
+        }
+        loading = true
+        var conf = confirm('Delete this sub category?')
+        if(conf){
+            fetch(`${baseUrl}workout/deleteSubCategory/${plan.subCatId}`, {
+                method: "POST",
+                headers: {
+                    "Authorization": "Bearer "+cookies.bari_token
+                }
+            })
+            .then(res=>res.json())
+            .then(data=>{
+                console.log(data)
+                if(data.success){
+                    location.reload()
+                }
+            })
+            .catch(err=>{
+                console.log(err)
+            })
+            .finally(()=>{
+                loading = false
+            })
+        }
+    })
+
     card.appendChild(image)
     card.appendChild(detailsHolder)
+    // card.appendChild(deleteHolder)
 
-    card.addEventListener('click', ()=>{
-        location.href = "http://localhost:8888/Bari/admin-workout-subcategory?id="+plan.subCatId
+    image.addEventListener('click', ()=>{
+        location.href = "https://barilifestyle.com/admin-workout-subcategory?id="+plan.id + "&catId=" +workoutId
+    })
+
+    detailsHolder.addEventListener('click', ()=>{
+        location.href = "https://barilifestyle.com/admin-workout-subcategory?id="+plan.id + "&catId=" +workoutId
     })
 
     return card;
@@ -56,18 +99,16 @@ function createSessionCard(plan){
 var loading = false
 
 function createSession(){
-    if(document.getElementById("newName").value == "" || document.getElementById("newDesc").value == ""){
+    if(document.getElementById("newName").value == ""){
         return
     }
     var newSession = {
-        name: document.getElementById("newName").value,
-        desccription: document.getElementById("newDesc").value,
-        workoutCategory: {
-            id: workoutId
-        }
+        day: document.getElementById("newName").value,
+        programId: workoutId,
+        dayImg: '',
     }
     loading = true
-    fetch(`${baseUrl}workout/add/SubCategory`, {
+    fetch(`${baseUrl}programs/save-day`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -78,6 +119,9 @@ function createSession(){
     .then(res=>res.json())
     .then(data=>{
         console.log(data)
+        if(data.success){
+            location.reload()
+        }
     })
     .catch(err=>{
         console.log(err)

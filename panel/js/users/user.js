@@ -85,6 +85,7 @@ function fillDetails(user) {
     document.getElementById("height").innerText = user.userDetail.height
     document.getElementById("targetWeight").innerText = user.userDetail.targetWeight
 
+    document.getElementById("s_userType").value = user.role
 
     document.getElementById('block_user').innerText = user.active ? "Block User" : "Unblock User"
     document.getElementById('block_user').addEventListener('click', blockUnblockUser.bind(this, user.active ? "Block User" : "Unblock User"))
@@ -184,4 +185,28 @@ function blockUnblockUser(message) {
             })
     }
 
+}
+
+function updateUserType(){
+    loading = true
+    var type = document.getElementById("s_userType").value
+    fetch(`${baseUrl}user/changeUserType?userId=${user_id}&role=${type}`, {
+        method: "GET",
+        headers: {
+            "Authorization": "Bearer" + cookies.bari_token
+        }
+    })
+    .then(res=>res.json())
+    .then(data=>{
+        console.log(data)
+        if(data.success){
+            location.reload()
+        }
+    })
+    .catch(err=>{
+        console.log(err)
+    })
+    .finally(()=>{
+        loading = false
+    })
 }

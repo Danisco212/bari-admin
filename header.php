@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <?php wp_head(); ?>
+    <link rel="icon" type="image/x-icon" href="<?php bloginfo('template_directory');?>/images/new-logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700&display=swap" rel="stylesheet">

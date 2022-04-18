@@ -2,6 +2,7 @@
 
 /* Template Name: Sub Category Workouts */
 $id = isset($_GET['id']) ? $_GET['id'] : die();
+$catId = isset($_GET['catId']) ? $_GET['catId'] : die();
 
 ?>
 
@@ -23,11 +24,12 @@ $id = isset($_GET['id']) ? $_GET['id'] : die();
 
 <body>
     <p id="cat_id" style="display: none;"><?php echo $id; ?></p>
+    <p id="activityId" style="display: none;"><?php echo $catId; ?></p>
     <div onclick="showMenu(false)" id="cover"></div>
     <div class="container">
         <div class="side_menu">
             <div class="head_container">
-                <a href="http://localhost:8888/Bari/admin-users/">
+                <a href="/admin-users/">
                     <div class="head">
                         <img style="height: 40px; width: 60px; margin-right: 10px;" src="<?php bloginfo('template_directory'); ?>/panel/images/new-logo.png" alt="">
                         <p style="font-weight: 600; color:#25b5c5;">Barilifestyle</p>
@@ -37,45 +39,52 @@ $id = isset($_GET['id']) ? $_GET['id'] : die();
             </div>
             <p style="margin-top: 30px; color: gray; font-size: 12px;">Features</p>
             <div class="menu_list">
-                <a href="http://localhost:8888/Bari/admin-dashboard/">
+                <a href="/admin-dashboard/">
                     <div class="menu">
                         <i class="fa fa-home" aria-hidden="true"></i>
                         <p>Dashboard</p>
                     </div>
                 </a>
 
-                <a href="http://localhost:8888/Bari/admin-users/">
+                <a href="/admin-users/">
                     <div class="menu">
                         <i class="fa fa-users" aria-hidden="true"></i>
                         <p>Users</p>
                     </div>
                 </a>
 
-                <a href="http://localhost:8888/Bari/admin-tips/">
+                <a href="/admin-tips/">
                     <div class="menu">
                         <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
                         <p>Tips</p>
                     </div>
                 </a>
 
-                <a href="http://localhost:8888/Bari/admin-discounts/">
+                <a href="/admin-discounts/">
                     <div class="menu">
                         <i class="fa fa-money" aria-hidden="true"></i>
                         <p>Discounts</p>
                     </div>
                 </a>
 
-                <a href="http://localhost:8888/Bari/admin-trophies/">
+                <a href="/admin-trophies/">
                     <div class="menu">
                         <i class="fa fa-trophy" aria-hidden="true"></i>
                         <p>Trophies</p>
                     </div>
                 </a>
 
-                <a href="http://localhost:8888/Bari/admin-workouts/">
+                <a href="/admin-workouts/">
                     <div class="menu selected">
                         <i class="fa fa-calendar-plus-o" aria-hidden="true"></i>
                         <p>Workouts</p>
+                    </div>
+                </a>
+
+                <a href="/admin-activities/">
+                    <div class="menu">
+                        <i class="fa fa-bolt" aria-hidden="true"></i>
+                        <p>Activities</p>
                     </div>
                 </a>
             </div>
@@ -92,10 +101,7 @@ $id = isset($_GET['id']) ? $_GET['id'] : die();
                     <i onclick="showMenu(true)" id="ham_menu_icon" class="fa fa-bars" aria-hidden="true"></i>
                 </div>
                 <div class="profile">
-                    <div class="lang">
-                        <img src="<?php bloginfo('template_directory'); ?>/panel/images/eng.svg" alt="">
-                        <p>English</p>
-                    </div>
+                    
                     <div class="prof">
                         <div class="det">
                             <p id="admin_name">Name</p>
@@ -107,6 +113,7 @@ $id = isset($_GET['id']) ? $_GET['id'] : die();
             </div>
 
             <div class="pageHolder">
+                <h1 id="dayName"></h1>
                 <div class="workoutHolder">
                     <h4 id="workoutTitle" style="color: gray;"></h4>
                     <p style="font-size: 12px; margin-top: 5px" id="workoutDescription"></p>
@@ -121,6 +128,24 @@ $id = isset($_GET['id']) ? $_GET['id'] : die();
                     </div>
                 </div>
                 <div class="add_sub">
+                    <p>Select Workout</p>
+                    <select name="" id="workout_select"></select>
+
+                    <p>Workout Duration</p>
+                    <input type="number" name="" id="newDuration">
+
+                    <p>Rest Duration</p>
+                    <input type="number" name="" id="restDuration">
+
+                    <p>Workout Type</p>
+                    <input type="radio" name="workout_type" checked value="REPS" id="reps">
+                    <label for="reps">Reps</label><br>
+                    <input type="radio" name="workout_type" value="TIMED" id="timed">
+                    <label for="timed">Timed</label><br>
+
+                    <button onclick="createDayActivity()">Create Workout</button>
+                </div>
+                <!-- <div class="add_sub">
                     <p>Workout Name</p>
                     <input type="text" name="" id="newName">
 
@@ -131,16 +156,16 @@ $id = isset($_GET['id']) ? $_GET['id'] : die();
                     <input type="number" name="" id="newDuration">
 
                     <p>Workout Type</p>
-                    <input type="radio" name="workout_type" id="reps">
+                    <input type="radio" name="workout_type" checked value="REPS" id="reps">
                     <label for="reps">Reps</label><br>
-                    <input type="radio" name="workout_type" id="timed">
+                    <input type="radio" name="workout_type" value="TIMED" id="timed">
                     <label for="timed">Timed</label><br>
 
                     <p>Workout Image</p>
                     <input type="file" name="" id="newImage">
 
                     <button onclick="uploadImage()">Create Workout</button>
-                </div>
+                </div> -->
             </div>
 
         </div>

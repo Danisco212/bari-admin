@@ -55,11 +55,13 @@ function getUserDetails(id, token) {
     })
         .then(res => res.json())
         .then(data => {
-            if (data.role === "ADMIN") {
+            if (data.role === "ADMIN" || data.role === "SUBADMIN") {
                 var expireDate = new Date(new Date().getTime() + 1 * 60 * 1000)
                 document.cookie = `bari_token=${token};expires=${expireDate};path=/`
                 document.cookie = `bari_id=${id};expires=${expireDate};path=/`
-                location.href = "http://localhost:8888/Bari/admin-users/"
+                document.cookie = `bari_role=${data.role};expires=${expireDate};path=/`
+                // location.href = "/Bari/admin-users/"
+                location.href = "https://barilifestyle.com/admin-users/"
             } else {
                 err.innerText = "You are not an admin"
                 err.style.display = "block"
@@ -79,5 +81,6 @@ document.getElementById("password").addEventListener("keyup", e => {
 
 // check if the user is already logged in
 if (cookies.bari_token && cookies.bari_token.length > 0) {
-    location.href = "http://localhost:8888/Bari/admin-users/"
+    // location.href = "/Bari/admin-users/"
+    location.href = "https://barilifestyle.com/admin-users/"
 }

@@ -1,0 +1,64 @@
+.activity_card{
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: white;
+    box-shadow: 3px 0px 10px rgba(133, 133, 133, 0.123);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.detailHolder{
+    flex: 1;
+}
+
+.activity_image{
+    margin-right: 20px;
+    background-color: white;
+    width: 100px;
+    height: 100px;
+}
+
+.deleteIcon{
+    height: 50px;
+    width: 50px;
+}
+
+.addActivity input[type="text"], .addActivity input[type="number"]{
+    padding: 0px 10px;
+    width: 60%;
+    height: 45px;
+    border-radius: 4px;
+    outline: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: none;
+    background-color: rgba(128, 128, 128, 0.171);
+}
+
+.addActivity textarea{
+    width: 60%;
+    height: 300px;
+}
+
+button{
+    margin-top: 20px;
+    margin-bottom: 50px;
+    padding: 10px 20px;
+    background-color: #25b5c5;
+    color: white;
+    border-radius: 4px;
+    border: none;
+    text-align: center;
+    font-size: 14px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#activityImg{
+    object-fit: contain;
+    width: 40%;
+    height: 400px;
+}
+

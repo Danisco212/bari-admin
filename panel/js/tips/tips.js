@@ -38,7 +38,7 @@ function createTip(tip) {
 
     var readMore = document.createElement('a')
     readMore.innerText = "Read More"
-    readMore.href = "http://localhost:8888/Bari/admin-tip-detail?id=" + tip.postId
+    readMore.href = "https://barilifestyle.com/admin-tip-detail?id=" + tip.postId
 
     details.appendChild(title)
 

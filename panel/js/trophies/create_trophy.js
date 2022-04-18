@@ -65,7 +65,7 @@ function postTrophy(trophy) {
         .then(data => {
             if (data.success) {
                 alert("Added new trophie")
-                location.href = "http://localhost:8888/Bari/admin-trophies/"
+                location.href = "https://barilifestyle.com/admin-trophies/"
             }
             console.log(data)
         })

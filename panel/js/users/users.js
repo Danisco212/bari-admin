@@ -29,20 +29,20 @@ function userCard(user) {
     userProf.className = "user_prof"
 
     var img = document.createElement('img')
-    img.src = user.userDetail.profileImgUrl ?? "http://localhost:8888/Bari/wp-content/themes/Final%20Theme/images/new-logo.png"
+    img.src = user.userDetail.profileImgUrl ?? "https://barilifestyle.com/wp-content/themes/Final%20Theme/images/new-logo.png"
 
     var dets = document.createElement('div')
     dets.className = "dets"
 
     var name = document.createElement('a')
     name.innerText = user.userDetail.fullName
-    name.href = "http://localhost:8888/Bari/admin-user?id=" + user.userId
+    name.href = "https://barilifestyle.com/admin-user?id=" + user.userId
 
     var username = document.createElement('p')
     username.innerText = "@" + user.username
     username.style.cursor = "pointer"
     username.addEventListener('click', e=>{
-        location.href = "http://localhost:8888/Bari/admin-user?id=" + user.userId
+        location.href = "https://barilifestyle.com/admin-user?id=" + user.userId
     })
 
     dets.appendChild(name)

@@ -25,7 +25,7 @@
     <div class="container">
         <div class="side_menu">
             <div class="head_container">
-                <a href="http://localhost:8888/Bari/admin-users/">
+                <a href="/admin-users/">
                     <div class="head">
                         <img style="height: 40px; width: 60px; margin-right: 10px;" src="<?php bloginfo('template_directory'); ?>/panel/images/new-logo.png" alt="">
                         <p style="font-weight: 600; color:#25b5c5;">Barilifestyle</p>
@@ -35,14 +35,14 @@
             </div>
             <p style="margin-top: 30px; color: gray; font-size: 12px;">Features</p>
             <div class="menu_list">
-                <a href="http://localhost:8888/Bari/admin-dashboard/">
+                <a href="/admin-dashboard/">
                     <div class="menu">
                         <i class="fa fa-home" aria-hidden="true"></i>
                         <p>Dashboard</p>
                     </div>
                 </a>
 
-                <a href="http://localhost:8888/Bari/admin-users/">
+                <a href="/admin-users/">
                     <div class="menu">
                         <i class="fa fa-users" aria-hidden="true"></i>
                         <p>Users</p>
@@ -56,24 +56,31 @@
                     </div>
                 </a>
 
-                <a href="http://localhost:8888/Bari/admin-discounts/">
+                <a href="/admin-discounts/">
                     <div class="menu">
                         <i class="fa fa-money" aria-hidden="true"></i>
                         <p>Discounts</p>
                     </div>
                 </a>
 
-                <a href="http://localhost:8888/Bari/admin-trophies/">
+                <a href="/admin-trophies/">
                     <div class="menu">
                         <i class="fa fa-trophy" aria-hidden="true"></i>
                         <p>Trophies</p>
                     </div>
                 </a>
 
-                <a href="http://localhost:8888/Bari/admin-workouts/">
+                <a href="/admin-workouts/">
                     <div class="menu">
                         <i class="fa fa-calendar-plus-o" aria-hidden="true"></i>
                         <p>Workouts</p>
+                    </div>
+                </a>
+
+                <a href="/admin-activities/">
+                    <div class="menu">
+                        <i class="fa fa-bolt" aria-hidden="true"></i>
+                        <p>Activities</p>
                     </div>
                 </a>
             </div>
@@ -90,10 +97,7 @@
                     <i onclick="showMenu(true)" id="ham_menu_icon" class="fa fa-bars" aria-hidden="true"></i>
                 </div>
                 <div class="profile">
-                    <div class="lang">
-                        <img src="<?php bloginfo('template_directory'); ?>/panel/images/eng.svg" alt="">
-                        <p>English</p>
-                    </div>
+                    
                     <div class="prof">
                         <div class="det">
                             <p id="admin_name">Name</p>
@@ -106,7 +110,7 @@
 
             <div class="tip_head">
                 <h1 style="margin-right: 20px;">Tips</h1>
-                <a href="http://localhost:8888/Bari/admin-create-tip/">Post a Tip</a>
+                <a href="/admin-create-tip/">Post a Tip</a>
             </div>
             <div class="tip_list">
                 <!-- <div class="tip">

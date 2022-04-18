@@ -70,13 +70,14 @@
     margin-bottom: 5px;
 }
 
-.add_sub input[type="text"], .add_sub input[type="number"]{
+.add_sub input[type="text"], .add_sub input[type="number"], select{
     padding: 0px 10px;
     width: 100%;
     height: 40px;
     outline: none;
     border-radius: 5px;
     border: 1px solid gray;
+    background-color: white;
 }
 
 .add_sub textarea{

@@ -156,3 +156,9 @@
     box-shadow: 0px 0px 8px #22cde0;
     cursor: pointer;
 }
+
+select{
+    height: 45px;
+    padding: 10px;
+    border-radius: 5px;
+}

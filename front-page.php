@@ -179,7 +179,7 @@
                     <div class="pointer left"></div>
                 </div>
             </div>
-            <img src="<?php bloginfo('template_directory');?>/images/ss3.png" id="option_img" alt="">
+            <img src="<?php bloginfo('template_directory');?>/images/newss1.jpg" id="option_img" alt="">
             <div class="options">
                 <div class="option flex_row">
                     <div class="pointer"></div>
@@ -206,11 +206,11 @@
 
     <section id="gallery">
         <div class="container">
-            <h3 id="gallery_title">Some Screens in the application</h3>
+            <h3 id="gallery_title">Some Screenshots</h3>
             <div class="gal_img_holder">
-                <img src="<?php bloginfo('template_directory');?>/images/ss1.png" class="gal_img" alt="">
-                <img src="<?php bloginfo('template_directory');?>/images/ss2.png" class="gal_img" alt="">
-                <img src="<?php bloginfo('template_directory');?>/images/ss3.png" class="gal_img" alt="">
+                <img src="<?php bloginfo('template_directory');?>/images/newss3.jpg" class="gal_img" alt="">
+                <img src="<?php bloginfo('template_directory');?>/images/newss2.jpg" class="gal_img" alt="">
+                <img src="<?php bloginfo('template_directory');?>/images/newss1.jpg" class="gal_img" alt="">
             </div>
         </div>
     </section>

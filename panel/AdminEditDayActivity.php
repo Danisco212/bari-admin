@@ -1,27 +1,28 @@
 <?php
 
-/* Template Name: Create User */
+/* Template Name: Edit Day Actibities */
+$id = isset($_GET['id']) ? $_GET['id'] : die();
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/panel/css/header.css">
-    <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/panel/css/users.css">
-    <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/panel/css/user.css">
-    <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/panel/css/create_user.css">
+    <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/panel/css/program.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700&display=swap" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barilifestyle User</title>
+    <title>Barilifestyle Workouts</title>
 </head>
 
 <body>
+    <p id="activityId" style="display: none;"><?php echo $id; ?></p>
     <div onclick="showMenu(false)" id="cover"></div>
     <div class="container">
         <div class="side_menu">
@@ -44,7 +45,7 @@
                 </a>
 
                 <a href="/admin-users/">
-                    <div class="menu selected">
+                    <div class="menu">
                         <i class="fa fa-users" aria-hidden="true"></i>
                         <p>Users</p>
                     </div>
@@ -72,7 +73,7 @@
                 </a>
 
                 <a href="/admin-workouts/">
-                    <div class="menu">
+                    <div class="menu selected">
                         <i class="fa fa-calendar-plus-o" aria-hidden="true"></i>
                         <p>Workouts</p>
                     </div>
@@ -109,48 +110,25 @@
                 </div>
             </div>
 
-            <div class="header_holdr">
-                <h1 style="margin-right: 20px;">Create User</h1>
-                <button onclick="createUser()">Create</button>
-            </div>
+            <div class="pageHolder">
+                <h1 id="activityName">Edit Day Activity</h1>
+                <div class="add_sub">
+                    <p>Select Workout</p>
+                    <select name="" id="workout_select"></select>
 
-            <div class="form_holdr">
-                <div class="field_holdr">
-                    <p>Full name</p>
-                    <input type="text" name="" id="uFullname">
-                </div>
+                    <p>Workout Duration</p>
+                    <input type="number" name="" id="newDuration">
 
-                <div class="field_holdr">
-                    <p>Email</p>
-                    <input type="text" name="" id="uEmail">
-                </div>
+                    <p>Rest Duration</p>
+                    <input type="number" name="" id="restDuration">
 
-                <div class="field_holdr">
-                    <p>Username</p>
-                    <input type="text" name="" id="uUsername">
-                </div>
+                    <p>Workout Type</p>
+                    <input type="radio" name="workout_type" checked value="REPS" id="reps">
+                    <label for="reps">Reps</label><br>
+                    <input type="radio" name="workout_type" value="TIMED" id="timed">
+                    <label for="timed">Timed</label><br>
 
-                <div class="field_holdr">
-                    <p>Password</p>
-                    <input type="text" name="" id="uPassword">
-                </div>
-
-                <div class="field_holdr">
-                    <p>Role</p>
-                    <select name="" id="uRole">
-                        <option value="ADMIN">Admin</option>
-                        <option value="REGULAR">Regular</option>
-                        <option value="PRO">Pro</option>
-                        <option value="PREMIUM">Premium</option>
-                    </select>
-                </div>
-
-                <div class="field_holdr">
-                    <p>Gender</p>
-                    <select name="" id="uGender">
-                        <option value="MALE">Male</option>
-                        <option value="FEMALE">Female</option>
-                    </select>
+                    <button onclick="updateDayActivity()">Create Workout</button>
                 </div>
             </div>
 
@@ -160,7 +138,7 @@
     <script src="https://kit.fontawesome.com/ac7f9a4329.js" crossorigin="anonymous"></script>
     <script src="<?php bloginfo('template_directory'); ?>/panel/js/variables.js"></script>
     <script src="<?php bloginfo('template_directory'); ?>/panel/js/header/header.js"></script>
-    <script src="<?php bloginfo('template_directory'); ?>/panel/js/users/createUser.js"></script>
+    <script src="<?php bloginfo('template_directory'); ?>/panel/js/workouts/editdayactivity.js"></script>
 </body>
 
 </html>

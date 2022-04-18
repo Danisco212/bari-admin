@@ -20,10 +20,47 @@ function getAllDiscounts() {
             data.forEach(discount => {
                 document.getElementById("discount_holder").appendChild(discountCard(discount))
             });
+            if(data.length === 1){
+                document.getElementById("deleteAllBtn").style.display = "none"
+            }else{
+                document.getElementById("deleteAllBtn").style.display = "block"
+                document.getElementById("deleteAllBtn").addEventListener('click', deleteAllDiscounts)
+            }
         })
         .catch(err => {
             console.log(err)
         })
+}
+
+const deleteAllDiscounts = ()=>{
+    if(loading){
+        alert("loading")
+        return
+    }
+    let conf = confirm("Delete all discounts")
+    if(conf){
+        loading = true
+        fetch(`${baseUrl}discount/deleteAll`, {
+            method: "POST",
+            headers: {
+                "Authorization": "Bearer "+cookies.bari_token
+            }
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            // console.log(data)
+            if(data.message.includes("successfully")){
+                location.reload()
+            }
+        })
+        .catch(err=>{
+            console.log(err)
+        })
+        .finally(()=>{
+            loading = false
+        })
+
+    }
 }
 
 

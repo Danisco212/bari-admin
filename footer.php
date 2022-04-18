@@ -28,7 +28,8 @@
                                 style="margin-left: 7px; width: 30px; height: 30px;" src="<?php bloginfo('template_directory');?>/images/blogger.png"
                                 alt=""></a>
                     </div>
-                    <p> 052-636-9991</p>
+                    <!--  052-636-9991 -->
+                    <p>+972 52 636-9991</p>
                     <p>email@barilifestyle.com</p>
                 </div>
             </div>
