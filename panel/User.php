@@ -121,6 +121,7 @@ $id = isset($_GET['id']) ? $_GET['id'] : die();
                                 <div class="actions">
                                     <!-- <button>Edit</button> -->
                                     <button id="block_user">Block User</button>
+                                    <button id="reset_password">Reset Password</button>
                                 </div>
                             </div>
                         </div>

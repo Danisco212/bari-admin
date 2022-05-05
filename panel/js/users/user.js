@@ -14,6 +14,31 @@ let targetCalories = document.getElementById("targetCalories")
 let targetWeight = document.getElementById("weightTarget")
 let stepTarget = document.getElementById("targetStep")
 
+let resetBtn = document.getElementById("reset_password")
+
+resetBtn.addEventListener('click', function(){
+    var conf = confirm('Reset User Password')
+
+    if(conf){
+        fetch(`${baseUrl}user/admin-reset-password?userId=${user_id}`, {
+            method: 'GET',
+            headers: {
+                "Authorization": `Bearer ${cookies.bari_token}`
+            }
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            if(data.success){
+                alert("User password has been reset successfully and sent to their email.");
+            }
+        })
+        .catch(err=>{
+            console.log(err)
+        })
+    }
+})
+
+
 function getUserDetails() {
     fetch(`${baseUrl}user/user/${user_id}`, {
         method: 'GET',
