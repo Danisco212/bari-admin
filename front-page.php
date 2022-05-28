@@ -20,14 +20,14 @@
 
     <section id="about">
         <div class="container flex_row">
-            <div class="cloud">
+            <div style="display: none;" class="cloud">
                 <div class="thin_cloud"></div>
                 <div class="thin_cloud c1"></div>
             </div>
             <div class="side_image"></div>
 
             <div class="text_details">
-                <p style="margin-bottom: 10px; color: #F0467A;">All About Bari Lifestyle</p>
+                <p style="margin-bottom: 10px; color: #50DAE8;">All About Bari Lifestyle</p>
                 <h4 style="margin-bottom: 20px; font-weight: 600px; font-size: 30px;">BariLifstyle makes a difference
                     for the bariatric community and for people that suffer from being overweight.</h4>
                 <p>BariLifestyle is a unique wellbeing application on the market, a powerful solution connecting the
@@ -61,7 +61,7 @@
     <section id="features">
         <div class="container flex_row">
             <div class="text">
-                <p style="margin-bottom: 10px; color: #F0467A;">SERVICES</p>
+                <p style="margin-bottom: 10px; color: #50DAE8;">SERVICES</p>
                 <h4 style="margin-bottom: 20px; line-height: 30px; font-weight: 600px; font-size: 30px;">The best
                     servies only found on our app</h4>
                 <p style="margin-bottom: 20px;">Listed are just some of the great features of the application that we
@@ -69,13 +69,20 @@
                 <button class="download_btn">Download Now</button>
             </div>
             <div class="holder">
-                <div class="feature" id="feat1">
-                    <img src="<?php bloginfo('template_directory');?>/images/fitness.png" alt="" class="image_f">
+                <div class="feature" id="feat6">
+                    <img src="<?php bloginfo('template_directory');?>/images/communities.png" alt="" class="image_f">
                     <div class="details">
-                        <h5>Workout Plans</h5>
-                        <p>Fitness is important for ensuring successful progress after bariatric surgery. Different
-                            workout plans depending on different factors will help you maintain your well-being
-                            progression. You can select one of the available designs from our wide range of choices</p>
+                        <h5>Large Community</h5>
+                        <p>Be part of our community. Connect with others with similar goals and get tips and tricks from
+                            those who are going through a similar process to your own.</p>
+                    </div>
+                </div>
+                <div class="feature" id="feat5">
+                    <img src="<?php bloginfo('template_directory');?>/images/tracker.png" alt="" class="image_f">
+                    <div class="details">
+                        <h5>Remainders</h5>
+                        <p>No longer miss taking your pills or vitamins on time, with our timely notification system you
+                            can be sure you are in control.</p>
                     </div>
                 </div>
                 <div class="feature" id="feat2">
@@ -103,20 +110,13 @@
                             your weight loss goals.</p>
                     </div>
                 </div>
-                <div class="feature" id="feat5">
-                    <img src="<?php bloginfo('template_directory');?>/images/tracker.png" alt="" class="image_f">
+                <div class="feature" id="feat1">
+                    <img src="<?php bloginfo('template_directory');?>/images/fitness.png" alt="" class="image_f">
                     <div class="details">
-                        <h5>Remainders</h5>
-                        <p>No longer miss taking your pills or vitamins on time, with our timely notification system you
-                            can be sure you are in control.</p>
-                    </div>
-                </div>
-                <div class="feature" id="feat6">
-                    <img src="<?php bloginfo('template_directory');?>/images/communities.png" alt="" class="image_f">
-                    <div class="details">
-                        <h5>Large Community</h5>
-                        <p>Be part of our community. Connect with others with similar goals and get tips and tricks from
-                            those who are going through a similar process to your own.</p>
+                        <h5>Workout Plans</h5>
+                        <p>Fitness is important for ensuring successful progress after bariatric surgery. Different
+                            workout plans depending on different factors will help you maintain your well-being
+                            progression. You can select one of the available designs from our wide range of choices</p>
                     </div>
                 </div>
             </div>
@@ -179,7 +179,7 @@
                     <div class="pointer left"></div>
                 </div>
             </div>
-            <img src="<?php bloginfo('template_directory');?>/images/newss1.jpg" id="option_img" alt="">
+            <img src="<?php bloginfo('template_directory');?>/images/newss3.png" id="option_img" alt="">
             <div class="options">
                 <div class="option flex_row">
                     <div class="pointer"></div>
@@ -208,9 +208,9 @@
         <div class="container">
             <h3 id="gallery_title">Some Screenshots</h3>
             <div class="gal_img_holder">
-                <img src="<?php bloginfo('template_directory');?>/images/newss3.jpg" class="gal_img" alt="">
-                <img src="<?php bloginfo('template_directory');?>/images/newss2.jpg" class="gal_img" alt="">
-                <img src="<?php bloginfo('template_directory');?>/images/newss1.jpg" class="gal_img" alt="">
+                <img src="<?php bloginfo('template_directory');?>/images/newss4.png" class="gal_img" alt="">
+                <img src="<?php bloginfo('template_directory');?>/images/newss2.png" class="gal_img" alt="">
+                <img src="<?php bloginfo('template_directory');?>/images/newss1.png" class="gal_img" alt="">
             </div>
         </div>
     </section>

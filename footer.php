@@ -18,20 +18,25 @@
                 </div>
                 <div class="socials">
                     <div class="list_socials flex_row">
-                        <a href="https://www.facebook.com/OLfitness"><img class="small" src="<?php bloginfo('template_directory');?>/images/facebook.png"
+                        <a href="https://www.facebook.com/BariLifestyle"><img class="small" src="<?php bloginfo('template_directory');?>/images/facebook.png"
                                 alt=""></a>
                         <a href="https://www.youtube.com/channel/UCk56dlZc0D3h2B9pMCoQjmg"><img class="small"
                                 src="<?php bloginfo('template_directory');?>/images/youtube.png" alt=""></a>
-                        <a href="https://www.instagram.com/olfitnessclub/"><img class="small"
+                        <a href="https://www.instagram.com/barilifestyle1/"><img class="small"
                                 src="<?php bloginfo('template_directory');?>/images/instagram.png" alt=""></a>
-                        <a href="https://olfitnessclub.blogspot.com/?m=1"><img class="small"
+                        <a href="https://youtu.be/SLJzeVuIIF4 "><img class="small"
                                 style="margin-left: 7px; width: 30px; height: 30px;" src="<?php bloginfo('template_directory');?>/images/blogger.png"
                                 alt=""></a>
                     </div>
                     <!--  052-636-9991 -->
-                    <p>+972 52 636-9991</p>
-                    <p>email@barilifestyle.com</p>
+                    <!-- <p>+972 52 636-9991</p> -->
+                    <a style="text-decoration: none; color: white;" href="mailto:info@BariLifestyle.com ">info@BariLifestyle.com </a>
                 </div>
+            </div>
+            <div style="margin-top: 30px; width: 100%; display: flex; align-items: center; flex-direction:row; justify-content:flex-end;">
+                <a>FAQ</a>
+                <div style="width: 50px;"></div>
+                <a>Terms & Conditions</a>
             </div>
         </div>
     </footer>

@@ -156,22 +156,26 @@ let options = {
     threshold: 0.4
 };
 
-let observer = new IntersectionObserver(callbackFunc, options);
+try{
+    let observer = new IntersectionObserver(callbackFunc, options);
 
-observer.observe(document.getElementById('about'));
-observer.observe(document.getElementById('feat1'));
-observer.observe(document.getElementById('feat2'));
-observer.observe(document.getElementById('feat3'));
-observer.observe(document.getElementById('feat4'));
-observer.observe(document.getElementById('feat5'));
-observer.observe(document.getElementById('feat6'));
-observer.observe(document.getElementById('screens'));
-observer.observe(document.getElementById('calories'));
-observer.observe(document.getElementById('downloads'));
-observer.observe(document.getElementById('clients'));
-observer.observe(document.getElementsByClassName('side_image')[0]);
-// observer.observe(document.getElementById('stats'));
-// observer.observe(document.getElementById('landing'));
+    observer.observe(document.getElementById('about'));
+    observer.observe(document.getElementById('feat1'));
+    observer.observe(document.getElementById('feat2'));
+    observer.observe(document.getElementById('feat3'));
+    observer.observe(document.getElementById('feat4'));
+    observer.observe(document.getElementById('feat5'));
+    observer.observe(document.getElementById('feat6'));
+    observer.observe(document.getElementById('screens'));
+    observer.observe(document.getElementById('calories'));
+    observer.observe(document.getElementById('downloads'));
+    observer.observe(document.getElementById('clients'));
+    observer.observe(document.getElementsByClassName('side_image')[0]);
+    // observer.observe(document.getElementById('stats'));
+    // observer.observe(document.getElementById('landing'));
+} catch(err) {
+    console.log(err)
+}
 
 
 

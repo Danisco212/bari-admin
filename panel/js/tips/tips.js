@@ -60,7 +60,7 @@ function createTip(tip) {
 
 
 function getTips() {
-    fetch(`${baseUrl}myposts`, {
+    fetch(`${baseUrl}allTips`, {
         method: 'GET',
         headers: {
             "user_id": parseInt(7),
@@ -70,8 +70,8 @@ function getTips() {
         .then(res => res.json())
         .then(data => {
             console.log(data)
-            if (data.tips) {
-                data.tips.forEach(tip => {
+            if (data) {
+                data.reverse().forEach(tip => {
                     document.getElementsByClassName('tip_list')[0].appendChild(createTip(tip))
                 })
             }
