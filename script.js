@@ -36,6 +36,16 @@ setTimeout(() => {
 
 // about animations
 
+try {
+    const overlay = document.getElementsByClassName('overlay')[0];
+    overlay.style.backgroundImage = `url(${document.getElementById('hero-image-holder').innerText.toString()})`
+
+    const sideImage = document.getElementsByClassName('side_image')[0];
+    sideImage.style.backgroundImage = `url(${document.getElementById('about-image-holder').innerText.toString()})`
+} catch (error) {
+    console.log(error)
+}
+
 
 
 // checking intersections
@@ -83,7 +93,7 @@ function callbackFunc(entries, observer) {
         } else if (entry.target.id == 'feat1' && entry.isIntersecting && !loadedFeat1) {
             anime({
                 targets: '#feat1',
-                rotate: ['35deg', '0deg'], 
+                rotate: ['35deg', '0deg'],
                 opacity: [0, 1],
                 easing: 'easeInOutQuad',
                 duration: 500
@@ -92,7 +102,7 @@ function callbackFunc(entries, observer) {
         } else if (entry.target.id == 'feat2' && entry.isIntersecting && !loadedFeat2) {
             anime({
                 targets: '#feat2',
-                rotate: ['35deg', '0deg'], 
+                rotate: ['35deg', '0deg'],
                 opacity: [0, 1],
                 easing: 'easeInOutQuad',
                 duration: 500
@@ -101,7 +111,7 @@ function callbackFunc(entries, observer) {
         } else if (entry.target.id == 'feat3' && entry.isIntersecting && !loadedFeat3) {
             anime({
                 targets: '#feat3',
-                rotate: ['35deg', '0deg'], 
+                rotate: ['35deg', '0deg'],
                 opacity: [0, 1],
                 easing: 'easeInOutQuad',
                 duration: 500
@@ -110,7 +120,7 @@ function callbackFunc(entries, observer) {
         } else if (entry.target.id == 'feat4' && entry.isIntersecting && !loadedFeat4) {
             anime({
                 targets: '#feat4',
-                rotate: ['35deg', '0deg'], 
+                rotate: ['35deg', '0deg'],
                 opacity: [0, 1],
                 easing: 'easeInOutQuad',
                 duration: 500
@@ -119,7 +129,7 @@ function callbackFunc(entries, observer) {
         } else if (entry.target.id == 'feat5' && entry.isIntersecting && !loadedFeat5) {
             anime({
                 targets: '#feat5',
-                rotate: ['35deg', '0deg'], 
+                rotate: ['35deg', '0deg'],
                 opacity: [0, 1],
                 easing: 'easeInOutQuad',
                 duration: 500
@@ -128,23 +138,27 @@ function callbackFunc(entries, observer) {
         } else if (entry.target.id == 'feat6' && entry.isIntersecting && !loadedFeat6) {
             anime({
                 targets: '#feat6',
-                rotate: ['35deg', '0deg'], 
+                rotate: ['35deg', '0deg'],
                 opacity: [0, 1],
                 easing: 'easeInOutQuad',
                 duration: 500
             })
             loadedFeat6 = true
-        } else if (entry.target.id == 'screens' && entry.isIntersecting && !loadedNumbers){
+        } else if (entry.target.id == 'screens' && entry.isIntersecting && !loadedNumbers) {
 
-            var clients = document.getElementById('clients')
-            var screens = document.getElementById('screens')
-            var downloads = document.getElementById('downloads')
-            var calories = document.getElementById('calories')
-            numberAnimation(clients, 4000, 1, 2000);
-            numberAnimation(screens, 20, 1, 2000);
-            numberAnimation(downloads, 10000, 1, 2000);
-            numberAnimation(calories, 587532, 1, 2000);
-            loadedNumbers = false
+            try {
+                var clients = document.getElementById('clients')
+                var screens = document.getElementById('screens')
+                var downloads = document.getElementById('downloads')
+                var calories = document.getElementById('calories')
+                numberAnimation(clients, parseInt(clients.innerHTML.toString(), 10), 1, 2000);
+                numberAnimation(screens, parseInt(screens.innerHTML.toString(), 10), 1, 2000);
+                numberAnimation(downloads, parseInt(downloads.innerHTML.toString(), 10), 1, 2000);
+                numberAnimation(calories, parseInt(calories.innerHTML.toString(), 10), 1, 2000);
+                loadedNumbers = false
+            } catch (error) {
+                console.log(error);
+            }
         }
     });
 
@@ -156,7 +170,7 @@ let options = {
     threshold: 0.4
 };
 
-try{
+try {
     let observer = new IntersectionObserver(callbackFunc, options);
 
     observer.observe(document.getElementById('about'));
@@ -173,7 +187,7 @@ try{
     observer.observe(document.getElementsByClassName('side_image')[0]);
     // observer.observe(document.getElementById('stats'));
     // observer.observe(document.getElementById('landing'));
-} catch(err) {
+} catch (err) {
     console.log(err)
 }
 
@@ -200,6 +214,6 @@ window.addEventListener('scroll', () => {
 })
 
 
-document.getElementsByClassName("go_up")[0].addEventListener('click', ()=>{
-    window.scrollTo({ top: 0, behavior: 'smooth'})
+document.getElementsByClassName("go_up")[0].addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
 })

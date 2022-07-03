@@ -18,25 +18,25 @@
                 </div>
                 <div class="socials">
                     <div class="list_socials flex_row">
-                        <a href="https://www.facebook.com/BariLifestyle"><img class="small" src="<?php bloginfo('template_directory');?>/images/facebook.png"
+                        <a href="<?php the_field('contact_facebook'); ?>"><img class="small" src="<?php bloginfo('template_directory');?>/images/facebook.png"
                                 alt=""></a>
-                        <a href="https://www.youtube.com/channel/UCk56dlZc0D3h2B9pMCoQjmg"><img class="small"
+                        <a href="<?php the_field('contact_youtube'); ?>"><img class="small"
                                 src="<?php bloginfo('template_directory');?>/images/youtube.png" alt=""></a>
-                        <a href="https://www.instagram.com/barilifestyle1/"><img class="small"
+                        <a href="<?php the_field('contact_instagram'); ?>"><img class="small"
                                 src="<?php bloginfo('template_directory');?>/images/instagram.png" alt=""></a>
-                        <a href="https://youtu.be/SLJzeVuIIF4 "><img class="small"
+<!--                         <a href="https://youtu.be/SLJzeVuIIF4 "><img class="small"
                                 style="margin-left: 7px; width: 30px; height: 30px;" src="<?php bloginfo('template_directory');?>/images/blogger.png"
-                                alt=""></a>
+                                alt=""></a> -->
                     </div>
                     <!--  052-636-9991 -->
                     <!-- <p>+972 52 636-9991</p> -->
-                    <a style="text-decoration: none; color: white;" href="mailto:info@BariLifestyle.com ">info@BariLifestyle.com </a>
+                    <a style="text-decoration: none; color: white;" href="mailto:<?php the_field('contact_email'); ?> "><?php the_field('contact_email'); ?></a>
                 </div>
             </div>
             <div style="margin-top: 30px; width: 100%; display: flex; align-items: center; flex-direction:row; justify-content:flex-end;">
-                <a>FAQ</a>
+                <a href="https://barilifestyle.com/faq">FAQ</a>
                 <div style="width: 50px;"></div>
-                <a>Terms & Conditions</a>
+                <a href="https://barilifestyle.com/terms">Terms & Conditions</a>
             </div>
         </div>
     </footer>

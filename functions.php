@@ -1,5 +1,12 @@
 <?php
 
+function add_mtheme_support(){
+    // Adds dynamic title
+    add_theme_support('title-tag');
+}
+add_action('after_setup_theme', 'add_mtheme_support');
+
+
 function load_stylesheets(){
     wp_register_style('styles', get_template_directory_uri() . '/styles.css', array(), 1, 'all');
     wp_enqueue_style('styles');

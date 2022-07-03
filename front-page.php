@@ -1,14 +1,23 @@
 <?php get_header(); ?>
 
+<?php 
+
+	$hero = get_field('hero');
+	$screenshot1 = get_field('phone1');
+	$screenshot2 = get_field('phone2');
+	$screenshot3 = get_field('phone3');
+?>
+
+<p style="display: none;" id="hero-image-holder"><?php echo $hero['hero_image']; ?></p>
+<p style="display: none;" id="about-image-holder"><?php the_field('about_image'); ?></p>
+
 <section id="landing">
         <div class="floaties"></div>
         <div class="container flex_row">
             <div class="text_details">
-                <h3>Empowering the Bariatric Community Worldwide</h3>
-                <p style="margin-top: 20px; margin-bottom: 20px;">The ultimate bariatric & overweight health and
-                    wellbeing apps for you with our rich content!. Join the world's first bariatric, overweight social
-                    wellbeing community.</p>
-
+                <h3><?php echo $hero['impact_message']; ?></h3>
+                <!-- <h3>Empowering the Bariatric Community Worldwide</h3> -->
+                <p style="margin-top: 20px; margin-bottom: 20px;"><?php echo $hero['hero_description']; ?></p>
                 <button class="download_btn">Download Now</button>
             </div>
             <div class="img_holder">
@@ -27,13 +36,9 @@
             <div class="side_image"></div>
 
             <div class="text_details">
-                <p style="margin-bottom: 10px; color: #50DAE8;">All About Bari Lifestyle</p>
-                <h4 style="margin-bottom: 20px; font-weight: 600px; font-size: 30px;">BariLifstyle makes a difference
-                    for the bariatric community and for people that suffer from being overweight.</h4>
-                <p>BariLifestyle is a unique wellbeing application on the market, a powerful solution connecting the
-                    bariatric community with health and fitness professionals around the world. Empower and enable the
-                    community with unique and revolutionary user-centric features, making information affordable and
-                    accessible to anyone, anywhere and anytime.</p>
+                <p style="margin-bottom: 10px; color: #50DAE8;"><?php the_field('about_tag'); ?></p>
+                <h4 style="margin-bottom: 20px; font-weight: 600px; font-size: 30px;"><?php the_field('about_title'); ?></h4>
+                <p><?php the_field('about_detail'); ?></p>
             </div>
         </div>
         <p class="large_txt" style="display: none;">BariLifstyle is the first fully social wellness application which
@@ -61,11 +66,9 @@
     <section id="features">
         <div class="container flex_row">
             <div class="text">
-                <p style="margin-bottom: 10px; color: #50DAE8;">SERVICES</p>
-                <h4 style="margin-bottom: 20px; line-height: 30px; font-weight: 600px; font-size: 30px;">The best
-                    servies only found on our app</h4>
-                <p style="margin-bottom: 20px;">Listed are just some of the great features of the application that we
-                    offer to all users.</p>
+                <p style="margin-bottom: 10px; color: #50DAE8;"><?php the_field('services_tag'); ?></p>
+                <h4 style="margin-bottom: 20px; line-height: 30px; font-weight: 600px; font-size: 30px;"><?php the_field('services_title'); ?></h4>
+                <p style="margin-bottom: 20px;"><?php the_field('services_detail'); ?></p>
                 <button class="download_btn">Download Now</button>
             </div>
             <div class="holder">
@@ -123,39 +126,44 @@
         </div>
     </section>
 
-
-    <section id="numbers">
-        <div class="container flex_row">
-            <div class="cnt">
-                <h3 id="clients">159</h3>
-                <div class="under flex_row">
-                    <div class="line"></div>
-                    <p>Happy Clients</p>
-                </div>
-            </div>
-            <div class="cnt">
-                <h3 id="screens">159</h3>
-                <div class="under flex_row">
-                    <div class="line"></div>
-                    <p>Screens</p>
-                </div>
-            </div>
-            <div class="cnt">
-                <h3 id="downloads">159</h3>
-                <div class="under flex_row">
-                    <div class="line"></div>
-                    <p>Downloads</p>
-                </div>
-            </div>
-            <div class="cnt">
-                <h3 id="calories">159</h3>
-                <div class="under flex_row">
-                    <div class="line"></div>
-                    <p>Calories Lost</p>
-                </div>
-            </div>
-        </div>
-    </section>
+	<?php 
+		if (get_field('show_numbers') == 1) {
+			echo '
+			<section id="numbers">
+				<div class="container flex_row">
+					<div class="cnt">
+						<h3 id="clients">'. get_field("happy_clients") .'</h3>
+						<div class="under flex_row">
+							<div class="line"></div>
+							<p>Happy Clients</p>
+						</div>
+					</div>
+					<div class="cnt">
+						<h3 id="screens">'. get_field("app_screens").'</h3>
+						<div class="under flex_row">
+							<div class="line"></div>
+							<p>Screens</p>
+						</div>
+					</div>
+					<div class="cnt">
+						<h3 id="downloads">'. get_field("download") .'</h3>
+						<div class="under flex_row">
+							<div class="line"></div>
+							<p>Downloads</p>
+						</div>
+					</div>
+					<div class="cnt">
+						<h3 id="calories">'. get_field("lost_calories") .'</h3>
+						<div class="under flex_row">
+							<div class="line"></div>
+							<p>Calories Lost</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			';
+		}
+	?>
 
     <section id="extra_features">
         <div class="container flex_row">
@@ -208,9 +216,9 @@
         <div class="container">
             <h3 id="gallery_title">Some Screenshots</h3>
             <div class="gal_img_holder">
-                <img src="<?php bloginfo('template_directory');?>/images/newss4.png" class="gal_img" alt="">
-                <img src="<?php bloginfo('template_directory');?>/images/newss2.png" class="gal_img" alt="">
-                <img src="<?php bloginfo('template_directory');?>/images/newss1.png" class="gal_img" alt="">
+				<img src="<?php echo $screenshot1; ?>" class="gal_img" alt="">
+				<img src="<?php echo $screenshot2; ?>" class="gal_img" alt="">
+				<img src="<?php echo $screenshot3; ?>" class="gal_img" alt="">
             </div>
         </div>
     </section>
