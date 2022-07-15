@@ -17,6 +17,7 @@ function getCategories() {
         .then(data => {
             console.log(data.data)
             size = data.data.length;
+            document.getElementsByClassName("progHolder")[0].innerHTML = ""
             data.data.forEach(program => {
                 document.getElementsByClassName("progHolder")[0].appendChild(programCard(program))
             });
@@ -41,7 +42,17 @@ function programCard(program) {
     var deleteHolder = document.createElement('div')
     deleteHolder.style.flex = 1
     deleteHolder.style.display = "flex"
+    deleteHolder.style.flexDirection = 'row'
+    deleteHolder.style.alignItems = 'center'
     deleteHolder.style.justifyContent="flex-end"
+
+    var cloneIcon = document.createElement('h3')
+    cloneIcon.innerHTML = 'Clone'
+    cloneIcon.style.marginRight = "10px"
+
+    cloneIcon.addEventListener('click', function(){
+        cloneWorkout(program.id)
+    })
 
     var deleteIcon = document.createElement('img')
     deleteIcon.src = "https://barilifestyle.com/wp-content/themes/BariAdmin/panel/images/delete.png"
@@ -76,6 +87,7 @@ function programCard(program) {
         }
     })
 
+    deleteHolder.appendChild(cloneIcon)
     deleteHolder.appendChild(deleteIcon)
     card.appendChild(img)
     card.appendChild(name)
@@ -155,4 +167,27 @@ function addBaseWorkout(imageUrl){
     .finally(()=>{
         loading = false
     })
+}
+
+function cloneWorkout(programId) {
+    let agree = confirm('Are you sure you want to clone this workout and all its contents?')
+
+    if(agree){
+        fetch(`${baseUrl}programs/copy/${programId}`, {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer "+cookies.bari_token,
+            }
+        })
+        .then(res=>res.json())
+        .then(data => {
+            console.log(data)
+            alert('Workout has been cloned')
+            location.reload()
+        })
+        .catch(err => {
+            console.error(err)
+        })
+    }
 }

@@ -130,3 +130,65 @@ function createSession(){
         loading = false
     })
 }
+
+function getWorkoutInfo() {
+    fetch(`${baseUrl}programs/${workoutId}`, {
+        method: 'GET',
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer " + cookies.bari_token,
+        }
+    })
+    .then(res => res.json())
+    .then(data => {
+        console.log("workout data is", data)
+        document.getElementById("workoutName").value = data.data.name
+        document.getElementById("workoutDesc").value = data.data.description
+    })
+    .catch(err => {
+        console.log(err)
+    })
+}
+
+getWorkoutInfo()
+
+function updateWorkout(){
+    if(document.getElementById("workoutName").value == ""){
+        alert('Please fill all fields')
+        return
+    }
+
+    if(document.getElementById("workoutDesc").value == ""){
+        alert('Please fill all fields')
+        return
+    }
+
+    var updateInfo = {
+        name: document.getElementById("workoutName").value,
+        description: document.getElementById("workoutDesc").value,
+        id: workoutId,
+    }
+
+    loading = true
+    fetch(`${baseUrl}programs/save`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer "+cookies.bari_token
+        },
+        body: JSON.stringify(updateInfo)
+    })
+    .then(res=>res.json())
+    .then(data=>{
+        console.log(data)
+        if(data.success){
+            location.reload()
+        }
+    })
+    .catch(err=>{
+        console.log(err)
+    })
+    .finally(()=>{
+        loading = false
+    })
+}
