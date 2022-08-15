@@ -16,10 +16,12 @@ function getWorkouts(){
     .then(data=>{
         console.log(data.data)
         data.data.forEach(workout => {
-            var option = document.createElement('option')
-            option.innerHTML = workout.name
-            option.value = workout.id
-            document.getElementById("workout_select").appendChild(option);
+            if(workout){
+                var option = document.createElement('option')
+                option.innerHTML = workout.name
+                option.value = workout.id
+                document.getElementById("workout_select").appendChild(option);
+            }
         })
     })
     .catch(err=>{
@@ -43,7 +45,9 @@ function getSubWorkouts(){
         // document.getElementById("workoutDescription").innerText = data.data.plan.description ?? ""
 
         data.data.forEach(plan=>{
-            document.getElementById("plan-list").appendChild(createSessionCard(plan))
+            if(plan.activity){
+                document.getElementById("plan-list").appendChild(createSessionCard(plan))
+            }
         })
     })
     .catch(err=>{
@@ -214,6 +218,40 @@ function createWorkout(dataUrl){
     })
 }
 
+function updateDayPlan(){
+    if(document.getElementById("dayPlanName").value == ""){
+        return
+    }
+    var newSession = {
+        day: document.getElementById("dayPlanName").value,
+        dayImg: '',
+        id: workoutId,
+        programId: activityId,
+    }
+    loading = true
+    fetch(`${baseUrl}programs/save-day`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer "+cookies.bari_token
+        },
+        body: JSON.stringify(newSession)
+    })
+    .then(res=>res.json())
+    .then(data=>{
+        console.log(data)
+        if(data.success){
+            location.reload()
+        }
+    })
+    .catch(err=>{
+        console.log(err)
+    })
+    .finally(()=>{
+        loading = false
+    })
+}
+
 // get day
 function getDay(){
     fetch(`${baseUrl}programs/day/${workoutId}`, {
@@ -225,6 +263,7 @@ function getDay(){
     .then(res=>{
         console.log(res)
         document.getElementById('dayName').innerHTML = res.data.day
+        document.getElementById('dayPlanName').value = res.data.day
     })
     .catch(err=>{
         console.log(err)

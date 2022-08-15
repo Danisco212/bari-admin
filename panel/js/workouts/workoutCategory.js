@@ -46,7 +46,40 @@ function createSessionCard(plan){
     var deleteHolder = document.createElement('div')
     deleteHolder.style.display = "flex"
     deleteHolder.style.flex = 1
+    deleteHolder.style.alignItems = "center"
     deleteHolder.style.justifyContent = "flex-end"
+
+    var clone = document.createElement('p')
+    clone.innerHTML = 'Clone'
+    deleteHolder.appendChild(clone)
+
+    clone.addEventListener('click', function (){
+        // ask to clone day
+        if(loading) return;
+        var conf = confirm('Clone this day?')
+        if(conf){
+            // clone the day
+            fetch(`${baseUrl}day-activity/copy/` +plan.id, {
+                method: 'POST',
+                headers: {
+                    "Authorization": "Bearer " + cookies.bari_token
+                }
+            })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if(data.success){
+                    location.reload()
+                }
+            })
+            .catch(err => {
+                console.log(err)
+            })
+            .finally(() => {
+                loading = false;
+            })
+        }
+    })
     
     var deleteImg = document.createElement('img')
     deleteImg.src = "https://barilifestyle.com/wp-content/themes/BariAdmin/panel/images/delete.png"
@@ -59,7 +92,7 @@ function createSessionCard(plan){
         loading = true
         var conf = confirm('Delete this sub category?')
         if(conf){
-            fetch(`${baseUrl}workout/deleteSubCategory/${plan.subCatId}`, {
+            fetch(`${baseUrl}programs/delete-day/${plan.id}`, {
                 method: "POST",
                 headers: {
                     "Authorization": "Bearer "+cookies.bari_token
@@ -83,7 +116,7 @@ function createSessionCard(plan){
 
     card.appendChild(image)
     card.appendChild(detailsHolder)
-    // card.appendChild(deleteHolder)
+    card.appendChild(deleteHolder)
 
     image.addEventListener('click', ()=>{
         location.href = "https://barilifestyle.com/admin-workout-subcategory?id="+plan.id + "&catId=" +workoutId

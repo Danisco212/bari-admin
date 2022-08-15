@@ -117,6 +117,12 @@ $catId = isset($_GET['catId']) ? $_GET['catId'] : die();
                 <div class="workoutHolder">
                     <h4 id="workoutTitle" style="color: gray;"></h4>
                     <p style="font-size: 12px; margin-top: 5px" id="workoutDescription"></p>
+                    <h1>Update Day Plan Name </h1>
+                    <div class="add_sub">
+                        <p>Day Plan Name</p>
+                        <input type="text" name="" id="dayPlanName">
+                        <button onclick="updateDayPlan()">Update Name</button>
+                    </div>
                     <div id="plan-list" class="workout_list">
                         <!-- <div class="workout">
                             <img src="" alt="">
