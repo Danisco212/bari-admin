@@ -61,7 +61,11 @@ function getUserDetails(id, token) {
                 document.cookie = `bari_id=${id};expires=${expireDate};path=/`
                 document.cookie = `bari_role=${data.role};expires=${expireDate};path=/`
                 // location.href = "/Bari/admin-users/"
-                location.href = "https://barilifestyle.com/admin-users/"
+                if(data.role === 'ADMIN'){
+                    location.href = "https://barilifestyle.com/admin-users/"
+                } else {
+                    location.href = "https://barilifestyle.com/admin-tips/"
+                }
             } else {
                 err.innerText = "You are not an admin"
                 err.style.display = "block"

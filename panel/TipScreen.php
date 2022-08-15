@@ -101,7 +101,7 @@
                     <div class="prof">
                         <div class="det">
                             <p id="admin_name">Name</p>
-                            <p style="font-size: 12px;">admin</p>
+                            <p style="font-size: 12px;" id="admin_role">admin</p>
                         </div>
                         <img id="admin_img" src="" alt="">
                     </div>
